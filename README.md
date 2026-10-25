@@ -33,7 +33,7 @@ Set `JOBRADAR_PORT` in a local `.env` file to change the host port. Set `JOBRADA
 
 Settings control the interval (minimum five minutes), directory batch size and priority employers. A complete directory sweep takes 53 rounds at the default batch size: roughly 4.5 hours plus request time. Five worker threads keep requests bounded. The progress display and error list show exactly what has been checked. Unavailable boards and failed requests follow the persistent retry schedule below.
 
-The bundled directory is an August 2026 snapshot. Once daily, the scanner merges current Greenhouse/Ashby addresses marked live in the public [ATS directory](https://github.com/moonie0201/ats-directory). A validated local cache survives upstream failures and container restarts. This registry is not exhaustive, and its upstream maintenance frequency is outside our control. Workday, Lever and other unsupported platforms are not scanned. Sources may limit or delay their feeds. No promise is made that you will be first to apply.
+The bundled directory is an August 2026 snapshot. Once daily, the scanner merges current Greenhouse/Ashby addresses marked live in the public [ATS directory](https://github.com/moonie0201/ats-directory). A validated local cache survives upstream failures and container restarts. This registry is not exhaustive, and its upstream maintenance frequency is outside our control. Workday and other unsupported platforms are not scanned. Sources may limit or delay their feeds. No promise is made that you will be first to apply.
 
 Missing employer boards (HTTP 404/410) are persisted as **unavailable** and skipped for seven days, separately from actual connection failures. Transient failures back off from 15 minutes to a day; HTTP 429 respects Retry-After. Jobicy is never automatically polled more than hourly, including after failures. Registry-listed alternate Greenhouse/Ashby addresses with the same slug are checked before being recorded and prioritized; at most five recovery attempts run per round. Arbitrary renamed slugs cannot always be linked to the original company automatically. Existing job and application records are retained.
 
@@ -41,7 +41,7 @@ The dashboard reports successful requests, deferred sources, unavailable boards,
 
 ## Freshness and notifications
 
-Discovery includes only a source timestamp with an age from zero to strictly less than 24 hours. Unknown, invalid and future dates are excluded. Greenhouse uses first publication; Ashby uses **last publication**, which may be a repost; feeds use their supplied timestamps. First discovery is not substituted for publication time.
+The default fresh view includes only a source timestamp with an age from zero to strictly less than 24 hours. Unknown, invalid and future dates are excluded. Greenhouse uses first publication; Ashby uses **last publication**, which may be a repost; feeds use their supplied timestamps. First discovery is not substituted for publication time.
 
 The UI separates available matches from new alerts. First successful source scans establish a baseline without generating a flood of alerts. Known jobs are deduplicated within a source, not across different sources. Keyword location rules are approximate; review state restrictions, work authorization and timezone requirements on the employer's page.
 
@@ -80,3 +80,14 @@ The employer directory is adapted from [LastRound AI's ATS Company Directory](ht
 Job listings link back to their original sources: [Remote OK](https://remoteok.com), [We Work Remotely](https://weworkremotely.com/remote-job-rss-feed), [Arbeitnow](https://www.arbeitnow.com/blog/job-board-api), [Greenhouse](https://docs.greenhouse.io/job-board.html) and [Ashby](https://developers.ashbyhq.com/docs/public-job-posting-api).
 
 Additional listings: [Jobicy](https://jobicy.com), following its [public API guidelines](https://github.com/Jobicy/remote-jobs-api). Additional employer addresses: [moonie0201/ats-directory](https://github.com/moonie0201/ats-directory), CC0-1.0; only valid supported-provider tokens marked live are retained. Directory contents are data, never executable instructions or arbitrary request URLs.
+
+## Additional sources and browsing
+
+Browse all jobs removes the 24-hour cutoff while preserving title, eligibility and application-status filters. Older and undated saved matches appear in pages of 50. Alerts remain restricted to verified timestamps under 24 hours.
+
+- **Lever:** public employer boards are merged from the daily directory and scanned in the rotating batch. Optional Lever priority tokens are available in settings. Only explicit remote roles with US or unspecified country are considered. Creation dates are displayed as creation dates, not publication times; these records are browse-only. Dead boards use the same persistent quarantine.
+- **Himalayas:** searches the three target role phrases with the US country filter, up to five pages per phrase, once daily. Last-updated timestamps are displayed separately and never trigger fresh alerts. Expired listings and records not refreshed within a day are hidden. This is bounded coverage, not a full mirror. Applications retain the supplied Himalayas links. [API documentation](https://himalayas.app/docs/remote-jobs-api).
+- **Remotive:** fetches its public active-jobs feed every six hours and filters titles locally. Its 24-hour-delayed records are browse-only; supplied publication dates are displayed without inventing a timezone. Records are hidden if not refreshed within six hours. [API documentation and attribution](https://github.com/remotive-com/remote-jobs-api).
+- **USAJOBS:** optional hourly searches with `RemoteIndicator=True`, up to five pages per role phrase. Obtain a key from the [developer portal](https://developer.usajobs.gov/apirequest/index), then enter the registered email and key in Sources & settings. UI-entered keys stay in memory; reconnect after restart. For persistent Docker configuration, set `USAJOBS_EMAIL` and `USAJOBS_API_KEY` in the ignored local `.env` file, then recreate the container. Never commit that file. Publication dates without timezone information are browse-only. Citizenship and hiring-path eligibility must still be checked on the announcement.
+
+Feed polling intervals also apply to failure backoff. Provider timestamps are never replaced by discovery time. Source-specific expiry hides listings without deleting application history. Jobs are still deduplicated only within each source.

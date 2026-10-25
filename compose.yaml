@@ -6,6 +6,8 @@ services:
     volumes:
       - jobradar-data:/data
     environment:
+      USAJOBS_API_KEY: "${USAJOBS_API_KEY:-}"
+      USAJOBS_EMAIL: "${USAJOBS_EMAIL:-}"
       JOBRADAR_DATA_DIR: /data
       JOBRADAR_SCAN_ENABLED: "${JOBRADAR_SCAN_ENABLED:-true}"
     restart: unless-stopped

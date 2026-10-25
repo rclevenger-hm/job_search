@@ -45,7 +45,7 @@ class Health:
                     from email.utils import parsedate_to_datetime
                     try: delay = max(delay,parsedate_to_datetime(value).timestamp()-(now or time.time()))
                     except (ValueError,TypeError): pass
-        if name=='Jobicy': delay=max(delay,3600)
+        delay=max(delay, {'Jobicy':3600,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
         self.record(name,status,delay,f'{type(exc).__name__}'+(f' ({code})' if code else ''),now=now)
         return status
 
@@ -60,7 +60,7 @@ def refresh_directory(seed, data_dir, now=None):
     try: cache = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     except (OSError,ValueError): cache = {}
     notice = ''
-    if now-cache.get('checked_at',0) >= 86400:
+    if cache.get('version') != 2 or now-cache.get('checked_at',0) >= 86400:
         try:
             request = urllib.request.Request(DIRECTORY_URL,headers={'User-Agent':'JobRadar/2.0'})
             with urllib.request.urlopen(request,timeout=20) as response:
@@ -69,15 +69,16 @@ def refresh_directory(seed, data_dir, now=None):
             additions = []
             for line in raw.decode('utf-8').splitlines():
                 row = json.loads(line)
-                if row.get('status')!='ok' or row.get('provider') not in ('greenhouse','ashby'): continue
+                if row.get('status')!='ok' or row.get('provider') not in ('greenhouse','ashby','lever'): continue
                 slug = row.get('slug','')
                 if not re.fullmatch(r'[A-Za-z0-9_-]{1,150}',slug): continue
                 additions.append(dict(vendor=row['provider'],slug=slug,company=row.get('name') or slug))
             if not additions: raise ValueError('Empty directory')
-            cache = dict(checked_at=now,updated_at=now,boards=additions)
+            cache = dict(version=2,checked_at=now,updated_at=now,boards=additions)
         except Exception as exc:
             notice = 'Directory refresh failed: '+type(exc).__name__+'; keeping cached boards.'
             cache['checked_at'] = now
+            cache['version'] = 2
         temp = path.with_suffix('.tmp')
         temp.write_text(json.dumps(cache),encoding='utf-8')
         temp.replace(path)

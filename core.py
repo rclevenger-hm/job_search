@@ -154,7 +154,7 @@ def load_board_directory(path):
     unique = {}
     for row in rows:
         vendor, slug = row.get('vendor'), row.get('slug', '')
-        if vendor in ('greenhouse', 'ashby') and re.fullmatch(r'[A-Za-z0-9_-]+', slug):
+        if vendor in ('greenhouse', 'ashby', 'lever') and re.fullmatch(r'[A-Za-z0-9_-]+', slug):
             unique[(vendor, slug)] = dict(vendor=vendor, slug=slug, company=row.get('company', slug))
     return list(unique.values())
 
@@ -267,6 +267,7 @@ class Store:
         self.db.execute('''CREATE TABLE IF NOT EXISTS jobs (
             key TEXT PRIMARY KEY, title TEXT, company TEXT, location TEXT, url TEXT,
             source TEXT, eligibility TEXT, posted TEXT, discovered TEXT, status TEXT DEFAULT 'New')''')
+        self.db.execute('CREATE TABLE IF NOT EXISTS job_metadata (key TEXT PRIMARY KEY, source_date TEXT, expires REAL)')
         self.db.execute('CREATE TABLE IF NOT EXISTS sources (name TEXT PRIMARY KEY)')
         self.db.execute('CREATE TABLE IF NOT EXISTS scan_state (name TEXT PRIMARY KEY, cursor INTEGER NOT NULL)')
         self.db.execute('''CREATE TABLE IF NOT EXISTS applications (
@@ -290,6 +291,9 @@ class Store:
                     (*values, now, 'Existing' if baseline else 'New')).rowcount
                 if not inserted and job.get('posted'):
                     self.db.execute('UPDATE jobs SET posted=? WHERE key=?', (job['posted'], job['key']))
+                if 'source_date' in job or 'expires' in job:
+                    self.db.execute('INSERT OR REPLACE INTO job_metadata VALUES (?,?,?)',
+                        (job['key'],job.get('source_date',''),job.get('expires',0)))
                 if inserted and not baseline and posted_within_24_hours(job.get('posted')):
                     new.append(job)
             self.db.execute('INSERT OR IGNORE INTO sources VALUES (?)', (source,))
@@ -297,7 +301,7 @@ class Store:
 
     def rows(self):
         self.db.row_factory = sqlite3.Row
-        return [dict(row) for row in self.db.execute('SELECT * FROM jobs ORDER BY discovered DESC, title')]
+        return [dict(row) for row in self.db.execute("""SELECT jobs.*, COALESCE(m.source_date, '') AS source_date FROM jobs LEFT JOIN job_metadata m ON jobs.key=m.key WHERE COALESCE(m.expires,0)=0 OR m.expires>unixepoch() ORDER BY discovered DESC, title""")]
 
     def scan_cursor(self):
         row = self.db.execute("SELECT cursor FROM scan_state WHERE name='directory'").fetchone()

@@ -1,5 +1,6 @@
 """One background scanner per application process; SQLite connections stay thread-local."""
 import json
+import os
 import logging
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -8,10 +9,11 @@ from pathlib import Path
 from core import (Store, greenhouse, ashby, arbeitnow, weworkremotely, remoteok,
                   read_mail, load_board_directory, directory_batch)
 from core import jobicy, arbeitnow_uk
+from extra_sources import lever, himalayas, remotive, usajobs
 from source_health import Health, refresh_directory
 
 DEFAULTS = dict(minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
-                mail_host='', mail_user='', mail_folder='LinkedIn Jobs')
+                lever_boards=[], usajobs_email='', mail_host='', mail_user='', mail_folder='LinkedIn Jobs')
 
 class Scanner:
     def __init__(self, data_dir, directory=None):
@@ -23,6 +25,7 @@ class Scanner:
         self.wake = threading.Event()
         self.stop = threading.Event()
         self.thread = None
+        self.usajobs_key = os.environ.get("USAJOBS_API_KEY", "")
         self.mail = None
         self.settings = dict(DEFAULTS)
         if self.settings_path.exists():
@@ -39,10 +42,13 @@ class Scanner:
     def snapshot(self):
         with self.lock:
             return {**self.state, 'errors':list(self.state['errors']), 'email_connected':bool(self.mail),
+                    'usajobs_configured':bool(self.usajobs_key and (self.settings.get('usajobs_email') or os.environ.get('USAJOBS_EMAIL'))),
                     'enabled': bool(self.thread and self.thread.is_alive())}
 
-    def save_settings(self, settings, password='', disconnect=False):
+    def save_settings(self, settings, password='', disconnect=False, usajobs_key='', disconnect_usajobs=False):
         with self.lock:
+            if disconnect_usajobs: self.usajobs_key = ""
+            elif usajobs_key: self.usajobs_key = usajobs_key
             previous = self.settings
             self.settings = dict(settings)
             # Atomic replacement avoids a partially written settings file.
@@ -83,6 +89,8 @@ class Scanner:
         with self.lock:
             settings = dict(self.settings)
             mail = self.mail
+            federal_key = self.usajobs_key
+            federal_email = settings.get("usajobs_email") or os.environ.get("USAJOBS_EMAIL", "")
             if self.state['running']: return
             self.state.update(running=True, completed=0, errors=[], new_alerts=0, successful=0, skipped=0, recovered=[])
         db = Store(self.db_path)
@@ -92,13 +100,14 @@ class Scanner:
             with self.lock:
                 self.state.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
             batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size'])
-            tasks = {'Arbeitnow':arbeitnow, 'Arbeitnow UK':arbeitnow_uk, 'Remote OK':remoteok, 'Jobicy':jobicy}
+            tasks = {'Arbeitnow':arbeitnow, 'Arbeitnow UK':arbeitnow_uk, 'Remote OK':remoteok, 'Jobicy':jobicy, 'Himalayas':himalayas, 'Remotive':remotive}
+            if federal_key and federal_email: tasks['USAJOBS'] = lambda:usajobs(federal_email,federal_key)
             if settings['wwr']: tasks['We Work Remotely'] = weworkremotely
             for b in batch:
-                fn = ashby if b['vendor']=='ashby' else greenhouse
-                name = ('Ashby: ' if b['vendor']=='ashby' else 'Greenhouse: ') + b['slug']
+                fn = {'ashby':ashby,'greenhouse':greenhouse,'lever':lever}[b['vendor']]
+                name = ({'ashby':'Ashby: ','greenhouse':'Greenhouse: ','lever':'Lever: '}[b['vendor']]) + b['slug']
                 tasks[name] = lambda f=fn, slug=b['slug']: f(slug)
-            for key, prefix, fn in [('boards','Greenhouse: ',greenhouse),('ashby_boards','Ashby: ',ashby)]:
+            for key, prefix, fn in [('boards','Greenhouse: ',greenhouse),('ashby_boards','Ashby: ',ashby),('lever_boards','Lever: ',lever)]:
                 for slug in settings[key]: tasks[prefix+slug] = lambda f=fn,b=slug:f(b)
             if mail: tasks['LinkedIn email'] = lambda:read_mail(mail)
             # Successfully resolved alternate addresses receive frequent checks.
@@ -118,14 +127,14 @@ class Scanner:
                     name = futures[future]
                     try:
                         new = db.ingest(name, future.result())
-                        health.record(name,'ok',3600 if name=='Jobicy' else 900 if name=='Arbeitnow UK' else 0)
+                        health.record(name,'ok',{'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
                         with self.lock:
                             self.state['new_alerts'] += len(new)
                             self.state['successful'] += 1
                     except Exception as exc:
                         code = getattr(exc, 'code', None)
                         error = f'{name}: {type(exc).__name__}' + (f' ({code})' if code else '')
-                        status = health.failure(name,exc,board=name.startswith(('Ashby: ','Greenhouse: ')))
+                        status = health.failure(name,exc,board=name.startswith(('Ashby: ','Greenhouse: ','Lever: ')))
                         if status!='unavailable':
                             with self.lock: self.state['errors'].append(error)
                     finally:
@@ -135,7 +144,7 @@ class Scanner:
             known = {(b['vendor'],b['slug']) for b in self.directory}
             attempts = 0
             for row in health.report():
-                if row['status']!='unavailable' or row['replacement'] or attempts>=5: continue
+                if row['status']!='unavailable' or row['replacement'] or attempts>=5 or row['name'].startswith('Lever: '): continue
                 provider,slug = row['name'].split(': ',1)
                 vendor = 'ashby' if provider=='Greenhouse' else 'greenhouse'
                 alternate = ('Ashby: ' if vendor=='ashby' else 'Greenhouse: ')+slug

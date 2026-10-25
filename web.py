@@ -131,16 +131,17 @@ def create_app(data_dir=None, start_scanner=False):
                 updated['batch_size'] = int(request.form.get('batch_size','150'))
                 if not 5 <= updated['minutes'] <= 1440 or not 1 <= updated['batch_size'] <= 300:
                     raise ValueError('Use 5–1440 minutes and 1–300 boards per round.')
-                for key in ('boards','ashby_boards'):
+                for key in ('boards','ashby_boards','lever_boards'):
                     updated[key] = list(dict.fromkeys(s.strip() for s in request.form.get(key,'').split(',') if s.strip()))
                     if len(updated[key])>30 or any(not re.fullmatch(r'[A-Za-z0-9_-]+',s) for s in updated[key]):
                         raise ValueError('Use up to 30 valid priority board tokens per platform.')
                 updated['wwr'] = 'wwr' in request.form
                 for key in ('mail_host','mail_user','mail_folder'): updated[key] = request.form.get(key,'').strip()
+                updated['usajobs_email'] = request.form.get('usajobs_email','').strip()
                 password = request.form.get('password','')
                 if password and not all(updated[k] for k in ('mail_host','mail_user','mail_folder')):
                     raise ValueError('Enter the mail host, username and folder.')
-                scanner.save_settings(updated,password,'disconnect' in request.form)
+                scanner.save_settings(updated,password,'disconnect' in request.form,request.form.get('usajobs_key',''),'disconnect_usajobs' in request.form)
                 flash('Saved. Mail passwords stay in memory only; reconnect after a container restart.')
                 return redirect(url_for('settings'))
             except ValueError as exc: flash(str(exc))

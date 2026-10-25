@@ -91,6 +91,18 @@ class WebTests(unittest.TestCase):
         self.assertIsNotNone(self.scanner.mail)
         self.assertIsNone(create_app(self.temp.name).extensions['scanner'].mail)
 
+    def test_usajobs_secret_is_memory_only(self):
+        payload = dict(minutes='5',batch_size='150',boards='',ashby_boards='',lever_boards='',
+            usajobs_email='user@example.com',usajobs_key='private-federal-key')
+        self.assertEqual(self.post('/settings',payload).status_code,302)
+        self.assertTrue(self.scanner.snapshot()['usajobs_configured'])
+        self.assertNotIn('private-federal-key',self.scanner.settings_path.read_text())
+        self.assertNotIn('private-federal-key',self.client.get('/settings').get_data(as_text=True))
+        self.post('/settings',dict(payload,usajobs_key='',disconnect_usajobs='on'))
+        self.assertFalse(self.scanner.snapshot()['usajobs_configured'])
+
+    @patch('scanner.himalayas',return_value=[])
+    @patch('scanner.remotive',return_value=[])
     @patch('scanner.remoteok',return_value=[])
     @patch('scanner.jobicy',return_value=[])
     @patch('scanner.arbeitnow_uk',return_value=[])
@@ -103,10 +115,12 @@ class WebTests(unittest.TestCase):
             self.scanner.run_once()
         state = self.scanner.snapshot()
         self.assertFalse(state['running'])
-        self.assertEqual(state['completed'],6)
+        self.assertEqual(state['completed'],8)
         self.assertEqual(len(state['errors']),1)
         self.assertIsNotNone(state['last_finished'])
 
+    @patch('scanner.himalayas',return_value=[])
+    @patch('scanner.remotive',return_value=[])
     @patch('scanner.remoteok',return_value=[])
     @patch('scanner.jobicy',return_value=[])
     @patch('scanner.arbeitnow_uk',return_value=[])
