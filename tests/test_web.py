@@ -43,6 +43,45 @@ class WebTests(unittest.TestCase):
         self.assertIn('SRE',self.client.get('/applications').get_data(as_text=True))
         db.db.close()
 
+    def test_browse_keeps_filters_but_never_expands_alert_feed(self):
+        db = Store(self.scanner.db_path)
+        now = datetime.now(timezone.utc)
+        base = dict(title='SRE',company='Acme',url='https://example.com/job',location='US Remote',source='test',eligibility='Ready')
+        db.ingest('test',[dict(base,key='fresh',posted=now.isoformat()),
+            dict(base,key='old',posted=(now-timedelta(days=2)).isoformat()),
+            dict(base,key='unknown',posted=''),dict(base,key='invalid',posted='bad date'),
+            dict(base,key='review',posted='',eligibility='Review'),
+            dict(base,key='dismissed',posted=''),dict(base,key='applied',posted='')])
+        db.mark('dismissed','Dismissed')
+        db.mark('applied','Applied')
+        db.db.close()
+        fresh = self.client.get('/api/status').json
+        self.assertEqual([j['key'] for j in fresh['visible_jobs']],['fresh'])
+        browse = self.client.get('/api/status?scope=browse&view=ready').json
+        self.assertEqual({j['key'] for j in browse['visible_jobs']},{'fresh','old','unknown','invalid'})
+        self.assertEqual([j['key'] for j in browse['jobs']],['fresh'])
+        review = self.client.get('/api/status?scope=browse&view=review').json
+        self.assertEqual([j['key'] for j in review['visible_jobs']],['review'])
+        page = self.client.get('/?scope=browse&view=ready').get_data(as_text=True)
+        self.assertIn('Browse all jobs',page)
+        self.assertIn('data-key="old"',page)
+        self.assertNotIn('data-key="review"',page)
+
+    def test_browse_pagination(self):
+        db = Store(self.scanner.db_path)
+        db.ingest('test',[dict(key=str(i),title='SRE',company='Acme',url='https://example.com/job',
+            location='US Remote',source='test',eligibility='Ready',posted='') for i in range(55)])
+        db.db.close()
+        first = self.client.get('/api/status?scope=browse').json
+        second = self.client.get('/api/status?scope=browse&page=2').json
+        self.assertEqual(first['total'],55)
+        self.assertEqual(len(first['visible_jobs']),50)
+        self.assertEqual(len(second['visible_jobs']),5)
+        self.assertFalse({j['key'] for j in first['visible_jobs']} & {j['key'] for j in second['visible_jobs']})
+        self.assertEqual(second['jobs'],[])
+        self.assertEqual(self.client.get('/?scope=browse&page=invalid').status_code,200)
+        self.assertEqual(self.client.get('/api/status?scope=browse&page=999').json['page'],2)
+
     def test_mail_password_not_persisted(self):
         payload = dict(minutes='5',batch_size='150',boards='',ashby_boards='',wwr='on',mail_host='imap.example.com',
             mail_user='user@example.com',mail_folder='Jobs',password='test-private-value')

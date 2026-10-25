@@ -35,29 +35,45 @@ def create_app(data_dir=None, start_scanner=False):
         response.headers['Cache-Control'] = 'no-store'
         return response
 
-    def available():
-        with store() as db: rows = db.rows()
+    def available(rows, scope='fresh'):
         return [dict(j,age=posted_age(j['posted'])) for j in rows
-                if j['status'] not in ('Applied','Dismissed') and posted_within_24_hours(j['posted'])]
+                if j['status'] not in ('Applied','Dismissed') and
+                (scope == 'browse' or posted_within_24_hours(j['posted']))]
+
+    def listing(rows):
+        scope = 'browse' if request.args.get('scope') == 'browse' else 'fresh'
+        selected = request.args.get('view','all')
+        if selected not in ('all','ready','review'): selected = 'all'
+        jobs = available(rows, scope)
+        if selected == 'ready': jobs = [j for j in jobs if j['eligibility']=='Ready']
+        if selected == 'review': jobs = [j for j in jobs if j['eligibility']=='Review']
+        def timestamp(job):
+            try: return datetime.fromisoformat(job['posted'].replace('Z','+00:00')).timestamp()
+            except (ValueError, TypeError, OverflowError, OSError): return float('-inf')
+        jobs.sort(key=lambda j: (timestamp(j), j['key']), reverse=True)
+        total = len(jobs)
+        pages = max(1, (total + 49)//50)
+        page = min(pages, max(1, request.args.get('page',1,type=int) or 1))
+        return dict(jobs=jobs[(page-1)*50:page*50], scope=scope, view=selected,
+                    total=total, page=page, pages=pages)
 
     @app.get('/')
     def index():
-        jobs = available()
-        jobs.sort(key=lambda j:datetime.fromisoformat(j['posted'].replace('Z','+00:00')),reverse=True)
-        selected = request.args.get('view','all')
-        if selected == 'ready': jobs = [j for j in jobs if j['eligibility']=='Ready']
-        if selected == 'review': jobs = [j for j in jobs if j['eligibility']=='Review']
-        return render_template('index.html',jobs=jobs,state=scanner.snapshot(),view=selected)
+        with store() as db: rows = db.rows()
+        return render_template('index.html',state=scanner.snapshot(),**listing(rows))
 
     @app.get('/api/status')
     def api_status():
-        jobs = available()
         with store() as db: stored = db.rows()
+        jobs = available(stored)
+        visible = listing(stored)
         excluded = dict(applied=sum(j['status']=='Applied' for j in stored),
             dismissed=sum(j['status']=='Dismissed' for j in stored),
             outside_window=sum(j['status'] not in ('Applied','Dismissed') and not posted_within_24_hours(j['posted']) for j in stored))
         return jsonify(state=scanner.snapshot(),available=len(jobs),
                        excluded=excluded,
+                       visible_jobs=[{k:j[k] for k in ('key','age')} for j in visible['jobs']],
+                       total=visible['total'], page=visible['page'], pages=visible['pages'],
                        ready=sum(j['eligibility']=='Ready' for j in jobs),
                        jobs=[{k:j[k] for k in ('key','title','company','status','eligibility','age')} for j in jobs])
 

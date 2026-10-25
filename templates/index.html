@@ -1,12 +1,24 @@
 {% extends 'base.html' %}{% block content %}
-<div class="heading"><div><p class="eyebrow">BROAD EMPLOYER SEARCH</p><h1>Fresh opportunities</h1><p>Published less than 24 hours ago. Application history never expires.</p></div><div class="actions"><button id="notifications">Enable desktop alerts</button><form action="/scan" method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button>Check now</button></form></div></div>
-<section class="stats"><article><strong id="available">{{ jobs|length }}</strong><span>Available matches (all)</span></article><article><strong id="directory-size">{{ '{:,}'.format(state.directory_size) }}</strong><span>Known employer boards</span></article><article><strong id="scan-progress">{{ state.completed }} / {{ state.total }}</strong><span>Sources checked this round</span></article></section>
+<div class="heading"><div><p class="eyebrow">BROAD EMPLOYER SEARCH</p><h1>{{ "Browse all jobs" if scope == "browse" else "Fresh opportunities" }}</h1><p>{{ "Saved matches of any age, including unknown posting dates. Check that older postings are still open." if scope == "browse" else "Published less than 24 hours ago. Application history never expires." }}</p><p>Desktop alerts only notify you about new matches posted within 24 hours.</p></div><div class="actions"><button id="notifications">Enable desktop alerts</button><form action="/scan" method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button>Check now</button></form></div></div>
+<section class="stats"><article><strong id="available">{{ total }}</strong><span>Matches in this view</span></article><article><strong id="directory-size">{{ '{:,}'.format(state.directory_size) }}</strong><span>Known employer boards</span></article><article><strong id="scan-progress">{{ state.completed }} / {{ state.total }}</strong><span>Sources checked this round</span></article></section>
 <p id="scan-status">{% if state.running %}Scanning…{% else %}Waiting for the next scan.{% endif %} Directory cursor: {{ state.cursor }}.</p>
 <p class="muted">Boards rotate in batches; a full sweep takes hours. This is broad coverage, not every employer. Ashby dates may represent republication.</p>
-<div class="tabs"><a href="/?view=all">All matches</a><a href="/?view=ready">US remote matches</a><a href="/?view=review">Needs eligibility review</a><a href="/">Refresh results</a></div>
-<section id="job-list" data-keys='{{ jobs|map(attribute="key")|list|tojson }}' data-view="{{ view }}">
+<nav class="tabs" aria-label="Posting age">
+<a href="{{ url_for('index',scope='fresh',view=view) }}" {% if scope == 'fresh' %}aria-current="page"{% endif %}>Under 24 hours · Alerts</a>
+<a href="{{ url_for('index',scope='browse',view=view) }}" {% if scope == 'browse' %}aria-current="page"{% endif %}>Browse all jobs</a>
+</nav>
+<nav class="tabs" aria-label="Eligibility">
+{% for value, label in [('all','All matches'),('ready','US remote matches'),('review','Needs eligibility review')] %}
+<a href="{{ url_for('index',scope=scope,view=value) }}" {% if view == value %}aria-current="page"{% endif %}>{{ label }}</a>
+{% endfor %}</nav>
+<p>Page {{ page }} of {{ pages }} · {{ total }} matches</p>
+<section id="job-list" data-keys='{{ jobs|map(attribute="key")|list|tojson }}' data-view="{{ view }}" data-scope="{{ scope }}" data-page="{{ page }}" data-pages="{{ pages }}" data-total="{{ total }}">
 {% for job in jobs %}<article class="job" data-key="{{ job.key }}"><div><span class="badge">{{ job.age }}</span> <span class="muted">{{ job.company }} · {{ job.source }}</span><h2><a href="{{ job.url }}" target="_blank" rel="noopener noreferrer">{{ job.title }}</a></h2><p>{{ job.location }} · {{ 'Verify eligibility' if job.eligibility == 'Review' else 'US / worldwide remote signal' }}</p><small title="{{ job.posted }}">Source timestamp: {{ job.posted }}</small></div><div class="actions"><a class="button" href="{{ url_for('application',key=job.key) }}">Record application</a><form action="/dismiss" method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}"><input type="hidden" name="key" value="{{ job.key }}"><button class="secondary">Dismiss</button></form></div></article>
-{% else %}<article class="empty"><h2>No available matches in this view yet</h2><p>This is not a claim that no jobs exist. Scanning may still be in progress; applied jobs, old postings and unknown posting dates are excluded.</p><a href="/applications">View your applications</a></article>{% endfor %}</section>
+{% else %}<article class="empty"><h2>No available matches in this view yet</h2><p>This is not a claim that no jobs exist. Scanning may still be in progress; applied and dismissed jobs are hidden.{% if scope == "fresh" %} Older postings and unknown posting dates are available in Browse all jobs.{% endif %}</p><a href="/applications">View your applications</a></article>{% endfor %}</section>
+<nav class="tabs" aria-label="Results pages">
+{% if page > 1 %}<a href="{{ url_for('index',scope=scope,view=view,page=page-1) }}">Previous page</a>{% endif %}
+{% if page < pages %}<a href="{{ url_for('index',scope=scope,view=view,page=page+1) }}">Next page</a>{% endif %}
+</nav>
 <p id="exclusions" class="muted"></p><p id="directory-notice" class="muted"></p>
 <details><summary>Connection failures (automatic backoff)</summary><ul id="errors">{% for error in state.errors %}<li>{{ error }}</li>{% endfor %}</ul></details>
 <details><summary>Unavailable boards — temporarily skipped</summary><p>Missing boards are held for seven days. Known alternate platform addresses are checked before being used. The directory is refreshed daily; not every renamed board can be recovered automatically.</p><ul id="unavailable"></ul></details>
