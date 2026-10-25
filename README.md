@@ -27,13 +27,17 @@ Set `JOBRADAR_PORT` in a local `.env` file to change the host port. Set `JOBRADA
 ## What it searches
 
 - A bundled directory of **7,821** Greenhouse and Ashby employer boards, in rotating batches of 150 by default.
-- Remote OK, the full We Work Remotely RSS feed, and Arbeitnow's latest API page.
+- Remote OK, the full We Work Remotely RSS feed, Arbeitnow's German and UK feeds, and Jobicy (hourly, with cursor pagination through the fresh results, capped at 20 pages).
 - Optional priority Greenhouse/Ashby employers checked each round. These lists do **not** restrict broad search.
 - Optional read-only LinkedIn alert email via IMAP, or manual `.eml` import.
 
-Settings control the interval (minimum five minutes), directory batch size and priority employers. A complete directory sweep takes 53 rounds at the default batch size: roughly 4.5 hours plus request time. Five worker threads keep requests bounded. The progress display and error list show exactly what has been checked. Failed boards are retried on their next sweep.
+Settings control the interval (minimum five minutes), directory batch size and priority employers. A complete directory sweep takes 53 rounds at the default batch size: roughly 4.5 hours plus request time. Five worker threads keep requests bounded. The progress display and error list show exactly what has been checked. Unavailable boards and failed requests follow the persistent retry schedule below.
 
-The directory is an August 2026 snapshot, not an exhaustive or automatically refreshed employer registry. Some boards have closed. Workday, Lever and other unsupported platforms are not scanned. Sources may limit or delay their feeds. No promise is made that you will be first to apply.
+The bundled directory is an August 2026 snapshot. Once daily, the scanner merges current Greenhouse/Ashby addresses marked live in the public [ATS directory](https://github.com/moonie0201/ats-directory). A validated local cache survives upstream failures and container restarts. This registry is not exhaustive, and its upstream maintenance frequency is outside our control. Workday, Lever and other unsupported platforms are not scanned. Sources may limit or delay their feeds. No promise is made that you will be first to apply.
+
+Missing employer boards (HTTP 404/410) are persisted as **unavailable** and skipped for seven days, separately from actual connection failures. Transient failures back off from 15 minutes to a day; HTTP 429 respects Retry-After. Jobicy is never automatically polled more than hourly, including after failures. Registry-listed alternate Greenhouse/Ashby addresses with the same slug are checked before being recorded and prioritized; at most five recovery attempts run per round. Arbitrary renamed slugs cannot always be linked to the original company automatically. Existing job and application records are retained.
+
+The dashboard reports successful requests, deferred sources, unavailable boards, connection failures and how many saved matches were excluded by the freshness filter or application status. Title matching includes variants such as “Software Engineer, Platform.” Country-specific Jobicy postings outside the supported US/worldwide regions are excluded.
 
 ## Freshness and notifications
 
@@ -74,3 +78,5 @@ The Flask application is served by Waitress, not Flask's development server. A s
 The employer directory is adapted from [LastRound AI's ATS Company Directory](https://github.com/fyrosofttech/lastroundai-hiring-data/tree/main/ats-directory), companion to the [Job Posting Pay Transparency Study](https://lastroundai.com/blog/salary-transparency-study-2026), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This version retains Greenhouse/Ashby rows, validates tokens, removes duplicates and reorders records.
 
 Job listings link back to their original sources: [Remote OK](https://remoteok.com), [We Work Remotely](https://weworkremotely.com/remote-job-rss-feed), [Arbeitnow](https://www.arbeitnow.com/blog/job-board-api), [Greenhouse](https://docs.greenhouse.io/job-board.html) and [Ashby](https://developers.ashbyhq.com/docs/public-job-posting-api).
+
+Additional listings: [Jobicy](https://jobicy.com), following its [public API guidelines](https://github.com/Jobicy/remote-jobs-api). Additional employer addresses: [moonie0201/ats-directory](https://github.com/moonie0201/ats-directory), CC0-1.0; only valid supported-provider tokens marked live are retained. Directory contents are data, never executable instructions or arbitrary request URLs.

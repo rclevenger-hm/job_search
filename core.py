@@ -16,7 +16,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse, quote
 from pathlib import Path
 
-ROLE = re.compile(r"site[ -]reliability|\bsre\b|dev[ -]?ops|platform\s+(?:software\s+)?engineer", re.I)
+ROLE = re.compile(r"site[ -]reliability|\bsre\b|dev[ -]?ops|platform\s+(?:software\s+)?engineer|engineer[^\n]{0,35}\bplatform\b", re.I)
 US = re.compile(r"\b(?:usa|us|u\.s\.|united states|north america|americas|worldwide|anywhere|global)\b", re.I)
 REMOTE = re.compile(r"\bremote\b|work from home|worldwide|anywhere", re.I)
 NOT_REMOTE = re.compile(r"hybrid|on[ -]?site|not remote|no remote", re.I)
@@ -164,17 +164,44 @@ def directory_batch(boards, cursor, size=150):
     end = min(start + size, len(boards))
     return boards[start:end], 0 if end == len(boards) else end
 
-def arbeitnow():
+def jobicy():
+    result, cursor = [], None
+    for _ in range(20):
+        url = 'https://jobicy.com/api/v2/remote-jobs?count=100'
+        if cursor: url += '&cursor=' + quote(cursor, safe='')
+        data = fetch_json(url)
+        jobs = data['jobs']
+        for j in jobs:
+            title = html.unescape(j.get('jobTitle', ''))
+            if not ROLE.search(title): continue
+            loc = j.get('jobGeo') or ''
+            url = j.get('url', '')
+            if urlparse(url).hostname != 'jobicy.com': continue
+            result.append(dict(key='jobicy:'+str(j['id']), title=title, company=j.get('companyName',''),
+                location=loc, url=url, source='Jobicy', eligibility=(eligibility(loc,True) if not loc or US.search(loc) else 'Excluded'), posted=j.get('pubDate') or ''))
+        cursor = data.get('nextCursor')
+        if not cursor: break
+        # Documented order: publication time descending. Stop after passing the cutoff.
+        stamp = jobs[-1].get('pubDate','') if jobs else ''
+        try:
+            if datetime.now(timezone.utc)-datetime.fromisoformat(stamp) >= timedelta(days=1): break
+        except (ValueError,TypeError): pass
+    return result
+
+def arbeitnow_uk():
+    return arbeitnow('https://www.arbeitnow.co.uk/api/job-board-api', 'Arbeitnow UK')
+
+def arbeitnow(endpoint='https://www.arbeitnow.com/api/job-board-api', source='Arbeitnow'):
     result = []
     # The public first page contains the latest listings; no full historical crawl.
-    for j in fetch_json('https://www.arbeitnow.com/api/job-board-api')['data']:
+    for j in fetch_json(endpoint)['data']:
         if not ROLE.search(j['title']):
             continue
         loc = j.get('location', '')
         stamp = j.get('created_at')
         posted = datetime.fromtimestamp(stamp, timezone.utc).isoformat() if isinstance(stamp, (int, float)) else ''
-        result.append(dict(key='arbeitnow:' + j['slug'], title=j['title'], company=j.get('company_name', ''),
-                           location=loc, url=j['url'], source='Arbeitnow', eligibility=eligibility(loc, j.get('remote')), posted=posted))
+        result.append(dict(key=('arbeitnow:' if source=='Arbeitnow' else 'arbeitnow-uk:') + j['slug'], title=j['title'], company=j.get('company_name', ''),
+                           location=loc, url=j['url'], source=source, eligibility=eligibility(loc, j.get('remote')), posted=posted))
     return result
 
 class Links(HTMLParser):

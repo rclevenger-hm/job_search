@@ -52,7 +52,12 @@ def create_app(data_dir=None, start_scanner=False):
     @app.get('/api/status')
     def api_status():
         jobs = available()
+        with store() as db: stored = db.rows()
+        excluded = dict(applied=sum(j['status']=='Applied' for j in stored),
+            dismissed=sum(j['status']=='Dismissed' for j in stored),
+            outside_window=sum(j['status'] not in ('Applied','Dismissed') and not posted_within_24_hours(j['posted']) for j in stored))
         return jsonify(state=scanner.snapshot(),available=len(jobs),
+                       excluded=excluded,
                        ready=sum(j['eligibility']=='Ready' for j in jobs),
                        jobs=[{k:j[k] for k in ('key','title','company','status','eligibility','age')} for j in jobs])
 

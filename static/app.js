@@ -15,8 +15,13 @@ if (list) {
       if (!response.ok) throw new Error('Status request failed');
       const data = await response.json(), s = data.state;
       document.getElementById('available').textContent = data.available;
+      document.getElementById('directory-size').textContent = s.directory_size.toLocaleString();
       document.getElementById('scan-progress').textContent = `${s.completed} / ${s.total}`;
-      document.getElementById('scan-status').textContent = `${s.running ? 'Scanning' : (s.enabled ? 'Waiting for next round' : 'Scanner disabled')} · ${data.available} available (${data.ready} US remote) · ${s.new_alerts} new alerts this round · Directory cursor ${s.cursor} / ${s.directory_size} · ${s.errors.length} source errors`;
+      document.getElementById('scan-status').textContent = `${s.running ? 'Scanning' : (s.enabled ? 'Waiting for next round' : 'Scanner disabled')} · ${data.available} available (${data.ready} US remote) · ${s.new_alerts} new alerts · ${s.successful} successful sources · ${s.skipped} skipped or not due · Directory ${s.cursor} / ${s.directory_size} · ${s.errors.length} connection failures`;
+      document.getElementById('exclusions').textContent = `Saved matches excluded: ${data.excluded.outside_window} outside the 24-hour window or missing dates; ${data.excluded.applied} applied; ${data.excluded.dismissed} dismissed. No dates are changed to fill the board.`;
+      document.getElementById('directory-notice').textContent = s.directory_notice || (s.directory_updated ? `Directory checked ${new Date(s.directory_updated*1000).toLocaleString()}. Jobicy is checked hourly.` : 'Directory refresh pending.');
+      const unavailable = document.getElementById('unavailable'); unavailable.replaceChildren();
+      s.unavailable.forEach(board => {const item = document.createElement('li'); item.textContent = `${board.name}: unavailable; retry ${new Date(board.retry_at*1000).toLocaleDateString()}${board.replacement ? ' — alternate: '+board.replacement : ''}`; unavailable.appendChild(item);});
       const errors = document.getElementById('errors'); errors.replaceChildren();
       s.errors.forEach(error => { const item = document.createElement('li'); item.textContent = error; errors.appendChild(item); });
       const added = data.jobs.filter(j => !seen.has(j.key) && j.status === 'New');

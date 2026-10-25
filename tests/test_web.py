@@ -53,16 +53,41 @@ class WebTests(unittest.TestCase):
         self.assertIsNone(create_app(self.temp.name).extensions['scanner'].mail)
 
     @patch('scanner.remoteok',return_value=[])
+    @patch('scanner.jobicy',return_value=[])
+    @patch('scanner.arbeitnow_uk',return_value=[])
     @patch('scanner.arbeitnow',return_value=[])
     @patch('scanner.weworkremotely',side_effect=TimeoutError)
     @patch('scanner.greenhouse',return_value=[])
     def test_scan_error_does_not_stop_other_sources(self,*mocks):
-        self.scanner.directory = [dict(vendor='greenhouse',slug='one')]
-        self.scanner.run_once()
+        self.scanner.seed_directory = [dict(vendor='greenhouse',slug='one')]
+        with patch('scanner.refresh_directory',return_value=(self.scanner.seed_directory,'',None)):
+            self.scanner.run_once()
         state = self.scanner.snapshot()
         self.assertFalse(state['running'])
-        self.assertEqual(state['completed'],4)
+        self.assertEqual(state['completed'],6)
         self.assertEqual(len(state['errors']),1)
         self.assertIsNotNone(state['last_finished'])
+
+    @patch('scanner.remoteok',return_value=[])
+    @patch('scanner.jobicy',return_value=[])
+    @patch('scanner.arbeitnow_uk',return_value=[])
+    @patch('scanner.arbeitnow',return_value=[])
+    @patch('scanner.weworkremotely',return_value=[])
+    def test_missing_board_is_skipped_and_alternate_recorded(self,*mocks):
+        from urllib.error import HTTPError
+        from source_health import Health
+        directory=[dict(vendor='greenhouse',slug='moved'),dict(vendor='ashby',slug='moved')]
+        self.scanner.seed_directory=directory
+        with patch('scanner.refresh_directory',return_value=(directory,'',1)), \
+             patch('scanner.greenhouse',side_effect=HTTPError('https://example.com',404,'missing',{},None)) as gone, \
+             patch('scanner.ashby',return_value=[]):
+            self.scanner.run_once()
+            self.assertEqual(self.scanner.snapshot()['errors'],[])
+            self.scanner.run_once()
+            self.assertEqual(gone.call_count,1)
+            self.assertGreater(self.scanner.snapshot()['skipped'],0)
+        db=Store(self.scanner.db_path)
+        self.assertEqual(Health(db.db).get('Greenhouse: moved')['replacement'],'Ashby: moved')
+        db.db.close()
 
 if __name__=='__main__': unittest.main()
