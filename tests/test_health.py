@@ -16,7 +16,7 @@ class HealthTests(unittest.TestCase):
             self.assertEqual(health.failure('Ashby: gone',err,board=True,now=100),'unavailable')
             store.db.close(); store=Store(path); health=Health(store.db)
             self.assertFalse(health.due('Ashby: gone',now=101))
-            self.assertTrue(health.due('Ashby: gone',now=100+7*86400))
+            self.assertTrue(health.due('Ashby: gone',now=100+30*86400))
             health.record('Ashby: gone','ok',0,now=200)
             self.assertTrue(health.due('Ashby: gone',now=201))
             self.assertEqual(health.report(),[])

@@ -33,7 +33,7 @@ class Health:
     def failure(self,name,exc,board=False,now=None):
         code = getattr(exc,'code',None)
         if board and code in (404,410):
-            status,delay = 'unavailable',7*86400
+            status,delay = 'unavailable',30*86400
         else:
             row = self.get(name)
             delay = min(86400,900 * 2**min(6,row['failures'] if row else 0))

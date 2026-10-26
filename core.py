@@ -99,11 +99,13 @@ def ashby(board):
             continue
         locations = [j.get('location', '')]
         addresses = [j.get('address', {})]
-        for secondary in j.get('secondaryLocations', []):
+        for secondary in j.get('secondaryLocations') or []:
             locations.append(secondary.get('location', ''))
             addresses.append(secondary.get('address', {}))
         for address in addresses:
-            locations.append(address.get('postalAddress', address).get('addressCountry', ''))
+            address = address or {}
+            postal = address.get('postalAddress') or address
+            locations.append(postal.get('addressCountry') or '')
         loc = '; '.join(dict.fromkeys(x for x in locations if x))
         url = j.get('jobUrl', '')
         if not safe_url(url): continue

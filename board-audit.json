@@ -1,0 +1,4350 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-25",
+  "boards": [
+    {
+      "name": "Ashby: Lynk",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/Lynk",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: a16z",
+      "replacement": "Greenhouse: a16z",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/a16z/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: accelevents",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/accelevents",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ace-1-media",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ace-1-media",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: adaptive-ml",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/adaptive-ml",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: aetherflux",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/aetherflux",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: agreena",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/agreena",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: air",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/air",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: allinbits",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/allinbits",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: aluriontalentgroup",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/aluriontalentgroup",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: amigo",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/amigo",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: anon",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/anon",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: appsumo",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/appsumo",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: arqu",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/arqu",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: arrakis",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/arrakis",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: artemisanalytics",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/artemisanalytics",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: atomicsemi",
+      "replacement": "Ashby: fab2",
+      "evidence": "https://jobs.ashbyhq.com/fab2/2cdb7ce3-a4c0-4586-9e8a-33ce06dcced0",
+      "reason": "Renamed board verified through employer listing and live jobs API."
+    },
+    {
+      "name": "Ashby: attentivemobile",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/attentivemobile",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: aviator",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/aviator",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: backpack",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/backpack",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: base",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/base",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: beam",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/beam",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: bedrock",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/bedrock",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: bhblasted",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/bhblasted",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: biconomy",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/biconomy",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: blaxel",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/blaxel",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: blowhammer",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/blowhammer",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: blue-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/blue-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: botcrew",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/botcrew",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: buildwithfern",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/buildwithfern",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: button",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/button",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: casap",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/casap",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cascade",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cascade",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: catena-labs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/catena-labs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: certn",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/certn",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: chronospherejobs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/chronospherejobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: circle-health",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/circle-health",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ciro",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ciro",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: clerky",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/clerky",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: clever",
+      "replacement": "Greenhouse: clever",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/clever/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: cloud9",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cloud9",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cloudtrucks",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cloudtrucks",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: clove",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/clove",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: coldstartventures",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/coldstartventures",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: columntax",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/columntax",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: commonroom",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/commonroom",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: comprehensive",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/comprehensive",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: comulate",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/comulate",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: conscious-talent",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/conscious-talent",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: continue",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/continue",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: corgi",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/corgi",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cosmos",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cosmos",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: count",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/count",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: crete-professionals-alliance",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/crete-professionals-alliance",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: crewbloom",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/crewbloom",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cribl",
+      "replacement": "Greenhouse: cribl",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cribl/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: crunchbase",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/crunchbase",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cside",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cside",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cubist",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cubist",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: curie",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/curie",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: cybret",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cybret",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: dclimate",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/dclimate",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: deductive",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/deductive",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: deepsky",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/deepsky",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: deltia",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/deltia",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: delve",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/delve",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: dimension",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/dimension",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: doe",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/doe",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: dynamic",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/dynamic",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: egra",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/egra",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ellamind",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ellamind",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: embo",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/embo",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: empora",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/empora",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ernest",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ernest",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: eyetell",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/eyetell",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: farmersd73",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/farmersd73",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: finalis",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/finalis",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: finally",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/finally",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: finalroundai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/finalroundai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: finvest",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/finvest",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: firstmate",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/firstmate",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: flentasticjobs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/flentasticjobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: foresite-labs-fl2024-006",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/foresite-labs-fl2024-006",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: forge",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/forge",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: foursquare",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/foursquare",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: fractional-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/fractional-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: framenergy",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/framenergy",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: fundamentalresearchlabs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/fundamentalresearchlabs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: furiosa-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/furiosa-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: general-context",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/general-context",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: genesis-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/genesis-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: getivy",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/getivy",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: glade",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/glade",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: goodship",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/goodship",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: grand",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/grand",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: hifi",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/hifi",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: hiive",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/hiive",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: hiring-pros",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/hiring-pros",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: hivesmart-consulting",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/hivesmart-consulting",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: humanist",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/humanist",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: iacollaborative",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/iacollaborative",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: inspiration-commerce-group",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/inspiration-commerce-group",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: integral",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/integral",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: interaction",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/interaction",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: irreducible",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/irreducible",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: jolly",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/jolly",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: keel",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/keel",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: keep",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/keep",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: kilocode",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/kilocode",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: kittl",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/kittl",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: klarity-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/klarity-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: kraken",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/kraken",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: latitude",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/latitude",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: layer",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/layer",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: leapsome",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/leapsome",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: leovegas",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/leovegas",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: lifetime-quality-roofing-storm-restoration",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/lifetime-quality-roofing-storm-restoration",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: linda",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/linda",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: lindy",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/lindy",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: lucra-sports",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/lucra-sports",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: lynk",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/lynk",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mach",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mach",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: madecard",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/madecard",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: magoosh",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/magoosh",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: maihem",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/maihem",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: manusai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/manusai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: marqeta",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/marqeta",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mastodon",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mastodon",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: material",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/material",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: maximor",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/maximor",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: medal",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/medal",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mem",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mem",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: membrane",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/membrane",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: miaplaza",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/miaplaza",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: migaku",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/migaku",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mine",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mine",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: minerva-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/minerva-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: miso",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/miso",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mona",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mona",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: moonshot-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/moonshot-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: moonvalley-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/moonvalley-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: mosey",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mosey",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: multivmlabs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/multivmlabs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: nava-benefits",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/nava-benefits",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: nen",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/nen",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: new-culture",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/new-culture",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: newfront",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/newfront",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: nuon",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/nuon",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: odin-dynamics",
+      "replacement": "Lever: odin-dynamics",
+      "evidence": "https://api.lever.co/v0/postings/odin-dynamics?mode=json&limit=1",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: olive",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/olive",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ona",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ona",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: orion",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/orion",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: ownup",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ownup",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: paloit",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/paloit",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: parashift",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/parashift",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: peppr",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/peppr",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: perfectly",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/perfectly",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: phoebe",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/phoebe",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: pixaera",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/pixaera",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: planetary-scale",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/planetary-scale",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: polaranalytics",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/polaranalytics",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: preemptive",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/preemptive",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: preludesecurity",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/preludesecurity",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: prime",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/prime",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: procure",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/procure",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: prox",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/prox",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: quadrivia",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/quadrivia",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: r2",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/r2",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: real",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/real",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: replicated",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/replicated",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: reservoir-media",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/reservoir-media",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: response",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/response",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: rf-labs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/rf-labs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: robin-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/robin-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: robot-learning-co",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/robot-learning-co",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: rokt",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/rokt",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: roo-code",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/roo-code",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: rythm",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/rythm",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: salesloft",
+      "replacement": "Greenhouse: salesloft",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/salesloft/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: saturn",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/saturn",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: savvyinsurance-trellis",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/savvyinsurance-trellis",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: serif",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/serif",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: skipup",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/skipup",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: skyscanner",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/skyscanner",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: softlight",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/softlight",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: solva",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/solva",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: spacecurve",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/spacecurve",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: statsig",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/statsig",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: stay22",
+      "replacement": "Greenhouse: stay22",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/stay22/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: stealthhc",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/stealthhc",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: stepwork",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/stepwork",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: stream-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/stream-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: sully-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/sully-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: superhuman",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/superhuman",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: suzy",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/suzy",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: synthflow",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/synthflow",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: syro",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/syro",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: syrup",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/syrup",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: tailwind",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tailwind",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: tandem",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tandem",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: tensorzero",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tensorzero",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: terrafirma",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/terrafirma",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: terrarium",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/terrarium",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: textio",
+      "replacement": "Greenhouse: textio",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/textio/jobs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Ashby: that1detailer",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/that1detailer",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: theam",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/theam",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: themindcompany",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/themindcompany",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: thewfsgroup",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/thewfsgroup",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: todyl",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/todyl",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: tokenterminal",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tokenterminal",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: tracer",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tracer",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: transform",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/transform",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: traverse",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/traverse",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: trove",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/trove",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: twentyfour-industries",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/twentyfour-industries",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: two-dots",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/two-dots",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: unit410",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/unit410",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: vcluster",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/vcluster",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: vellum",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/vellum",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: verge-genomics",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/verge-genomics",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: vibecode",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/vibecode",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: videowise",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/videowise",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: vinci4d",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/vinci4d",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: watneyrobotics",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/watneyrobotics",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: whatnot",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/whatnot",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: wilson",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/wilson",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: windmill",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/windmill",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: wissen",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/wissen",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: woflow",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/woflow",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: wokelo-ai",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/wokelo-ai",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: xlabs",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/xlabs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: xyme",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/xyme",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: yovo",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/yovo",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Ashby: yutori",
+      "replacement": "",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/yutori",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: 10xgenomics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/10xgenomics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: 143studiosinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/143studiosinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: 1912",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/1912/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: 7shifts",
+      "replacement": "Ashby: 7shifts",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/7shifts",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: 86repairs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/86repairs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: a16zcryptoteam",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/a16zcryptoteam/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: abakaai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/abakaai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: abarca",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/abarca/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: abcd",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/abcd/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: acrisureinnovation",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/acrisureinnovation/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: actpowerservices",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/actpowerservices/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: aef",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/aef/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: aerospike",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/aerospike/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: affinity",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/affinity/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: aiserajobs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/aiserajobs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: akoya",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/akoya/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: alby",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/alby/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: allbirds",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/allbirds/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: allbirdsretail",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/allbirdsretail/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: alma",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/alma/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: alpineinternships",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/alpineinternships/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: alpineinvestors",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/alpineinvestors/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: alt",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/alt/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: altium",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/altium/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: amb",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/amb/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ambiententerprises",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ambiententerprises/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: amenitiz",
+      "replacement": "Ashby: amenitiz",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/amenitiz",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: amplitude",
+      "replacement": "Ashby: amplitude",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/amplitude",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: anchanto",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/anchanto/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: anchorhealthct",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/anchorhealthct/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: android",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/android/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: appliedintuition",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: apr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/apr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: arcadiacareers",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/arcadiacareers/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: arcellx",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/arcellx/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: arculus",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/arculus/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: arine",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/arine/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: armracolostrum",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/armracolostrum/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: artefactus",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/artefactus/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ascend",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ascend/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ascendanalytics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ascendanalytics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ast",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ast/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: atomico",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/atomico/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: atomicwork",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/atomicwork/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: attune",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/attune/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: aurorainnovation",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/aurorainnovation/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: azumo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/azumo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: baincapitalventures",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/baincapitalventures/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: barkley",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/barkley/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: beaconsoftware",
+      "replacement": "Ashby: beaconsoftware",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/beaconsoftware",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: beatboxbeveragesllc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/beatboxbeveragesllc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bedrockrobotics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bedrockrobotics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: berkadia",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/berkadia/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bff",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bff/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bgbgroup",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bgbgroup/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: biograph",
+      "replacement": "Ashby: biograph",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/biograph",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: bitcoindepot",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bitcoindepot/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bitly",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bitly/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: blackforestlabs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/blackforestlabs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bluecoreinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bluecoreinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bluecrestcapitalmanagement",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bluecrestcapitalmanagement/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: blueprintinternal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/blueprintinternal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bmgmoney",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bmgmoney/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: boldbusiness",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/boldbusiness/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bolster",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bolster/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: boltv2",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/boltv2/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bombora",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bombora/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: bosc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/bosc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: breezeairways",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/breezeairways/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: broadvoice",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/broadvoice/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: brooklinen",
+      "replacement": "Ashby: brooklinen",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/brooklinen",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: butlr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/butlr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: buyersedgeplatformrecruiting",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/buyersedgeplatformrecruiting/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: buzzfeed",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/buzzfeed/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cadencesolutions",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cadencesolutions/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: callibrity",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/callibrity/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: calvettifergusonexperiencedprofessionals",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/calvettifergusonexperiencedprofessionals/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: campusopportunities",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/campusopportunities/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: capitalize",
+      "replacement": "Ashby: capitalize",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/capitalize",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: capitalrx",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/capitalrx/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: carbon",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/carbon/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: carbonrobotics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/carbonrobotics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cardflight",
+      "replacement": "Ashby: cardflight",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/cardflight",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: cardinalpoint",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cardinalpoint/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: carewell",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/carewell/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cartwheelcare",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cartwheelcare/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cascalahealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cascalahealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: catenaclearing",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/catenaclearing/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ccscorpcareers",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ccscorpcareers/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cerebral",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cerebral/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cerebrassystems",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cerebrassystems/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: chas",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/chas/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: chathamfinancial",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/chathamfinancial/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: circleso",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/circleso/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: civilscience",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/civilscience/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cker",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cker/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: clarity",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/clarity/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: clarityai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/clarityai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: clickhouse",
+      "replacement": "Ashby: clickhouse",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/clickhouse",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: climateai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/climateai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cmf",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cmf/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cobo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cobo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cocoon",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cocoon/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: contextualai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/contextualai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: corescientific",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/corescientific/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: credera",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/credera/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: creditkarma",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/creditkarma/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: crestline",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/crestline/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: crossbeam",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/crossbeam/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cti",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cti/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: currentopenings",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/currentopenings/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cwe",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cwe/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: cytokinetics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/cytokinetics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dbtlabsinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dbtlabsinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: debtbook",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/debtbook/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: deepblue",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/deepblue/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: deepmind",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/deepmind/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: delasport",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/delasport/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: des",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/des/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: designmehair",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/designmehair/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: designpickle",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/designpickle/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: devboard",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/devboard/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dispatch",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dispatch/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dmcengineering2024",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dmcengineering2024/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: doctorswithoutborders",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/doctorswithoutborders/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: downtownmusic",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/downtownmusic/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: doxo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/doxo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dropps",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dropps/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dubber",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dubber/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: dustyrobotics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/dustyrobotics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: earlytalentcerebras",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/earlytalentcerebras/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: eatjust",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/eatjust/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: edge",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/edge/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: edume",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/edume/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: embrace",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/embrace/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: engagedmd",
+      "replacement": "Ashby: engagedmd",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/engagedmd",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: enthought",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/enthought/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: entrylevelga",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/entrylevelga/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: equatic",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/equatic/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: equilibrium",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/equilibrium/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: euclidpower",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/euclidpower/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: evolutionaryscale",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/evolutionaryscale/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: evpassport",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/evpassport/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: exodus54",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/exodus54/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: exploratory",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/exploratory/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: expressvpn",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/expressvpn/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: faf",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/faf/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: feinternational",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/feinternational/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ffg",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ffg/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fireworksai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fireworksai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: flagstone",
+      "replacement": "Ashby: flagstone",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/flagstone",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: flaunt",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/flaunt/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: flipapp1",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/flipapp1/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: flyflat",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/flyflat/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: flyr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/flyr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: forethought",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/forethought/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: forgeglobal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/forgeglobal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fortra",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fortra/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fuga",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fuga/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fundraiseup",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fundraiseup/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: futurehouse",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/futurehouse/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: fuzehealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/fuzehealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gafg",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gafg/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gainternships",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gainternships/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: galaxiatech",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/galaxiatech/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: galileofinancialtechnologies",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/galileofinancialtechnologies/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gatewayfm",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gatewayfm/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: generac",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/generac/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ghd",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ghd/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gigaenergy",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gigaenergy/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: glassdoor",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/glassdoor/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: glossgenius",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/glossgenius/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gohealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gohealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: govector",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/govector/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: govini",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/govini/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: govtechbarbados",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/govtechbarbados/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: gracent-peds",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/gracent-peds/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: greenline",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/greenline/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: growth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/growth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: growthday",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/growthday/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: growtherapy",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/growtherapy/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hala",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hala/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: harmonic",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/harmonic/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: harvard",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/harvard/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: havenhub",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/havenhub/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: haydenconsultinggroupllc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/haydenconsultinggroupllc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: headway",
+      "replacement": "Ashby: headway",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/headway",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: herewithgmbh",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/herewithgmbh/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: herewithinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/herewithinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hextechnologies",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hextechnologies/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: heycar",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/heycar/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hibu",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hibu/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hiddenroad",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hiddenroad/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hightouch",
+      "replacement": "Ashby: hightouch-inc",
+      "evidence": "https://hightouch.com/careers",
+      "reason": "Renamed board verified through employer listing and live jobs API."
+    },
+    {
+      "name": "Greenhouse: hireez",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hireez/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hivemq",
+      "replacement": "Ashby: hivemq",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/hivemq",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: holder",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/holder/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: homewardhealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/homewardhealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hoppr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hoppr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: houseaccount",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/houseaccount/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hubspot",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hubspot/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: hyphenconnect",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/hyphenconnect/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ibanfirst",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ibanfirst/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ibkr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ibkr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ibkrexternal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ibkrexternal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: iherb",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/iherb/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: inariagriculture",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/inariagriculture/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: inhersight",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/inhersight/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: inovalon",
+      "replacement": "Ashby: inovalon",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/inovalon",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: insightly",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/insightly/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: inspiren",
+      "replacement": "Ashby: inspiren",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/inspiren",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: instabase",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/instabase/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: interfaceai",
+      "replacement": "Ashby: interface-ai",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/interface-ai",
+      "reason": "Renamed board verified through employer listing and live jobs API."
+    },
+    {
+      "name": "Greenhouse: internshipsandftjobboard",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/internshipsandftjobboard/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: interviewkickstart",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/interviewkickstart/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: invoca",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/invoca/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: isidor",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/isidor/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: itel",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/itel/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: janeasystems",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/janeasystems/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: joinbiospan",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/joinbiospan/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: joinforage",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/joinforage/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: journee",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/journee/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: jumo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/jumo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: junglescout",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/junglescout/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kadenallc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kadenallc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kape",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kape/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kca",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kca/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kicksaw",
+      "replacement": "Ashby: kicksaw",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/kicksaw",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: kindo",
+      "replacement": "Ashby: kindo",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/kindo",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: kion",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kion/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kit",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kit/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: knowde",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/knowde/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: koko",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/koko/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: kxadvisors",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/kxadvisors/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: la2028",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/la2028/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: lead",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/lead/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: letsgetchecked",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/letsgetchecked/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: lextech",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/lextech/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: liminalbuild",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/liminalbuild/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: linkedin",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/linkedin/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: lipton",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/lipton/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: liveviewtechnologiesinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/liveviewtechnologiesinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: loop",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/loop/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: loyal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/loyal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mackweldon",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mackweldon/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: maev",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/maev/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: magicleap",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/magicleap/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: magnit",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/magnit/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: magnoliabakery",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/magnoliabakery/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: maintainx",
+      "replacement": "Ashby: maintainx",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/maintainx",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: mangopay",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mangopay/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: marqeta",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/marqeta/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mast",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mast/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: materialize",
+      "replacement": "Ashby: materialize",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/materialize",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: matx",
+      "replacement": "Ashby: matx",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/matx",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: mcculloughrobertson",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mcculloughrobertson/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mcr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mcr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mediacurrent",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mediacurrent/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: meitu",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/meitu/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: memphismeats",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/memphismeats/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: menyala",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/menyala/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mgtinsurance",
+      "replacement": "Ashby: mgtinsurance",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mgtinsurance",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: mindsdb",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mindsdb/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: minthouse",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/minthouse/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mishimoto",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mishimoto/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mlmultiplecareerlocations",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mlmultiplecareerlocations/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: morty",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/morty/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: moveworks",
+      "replacement": "",
+      "evidence": "https://www.moveworks.com/us/en/company/careers",
+      "reason": "Old API returns 404. Official Moveworks from ServiceNow careers page has openings; a supported replacement API is not verified."
+    },
+    {
+      "name": "Greenhouse: mqreferrals",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mqreferrals/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mrapplesocial",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/mrapplesocial/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: multivista",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/multivista/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: mutiny",
+      "replacement": "Ashby: mutiny",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/mutiny",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: myshell",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/myshell/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nanonets",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nanonets/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nativeinstruments",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nativeinstruments/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: navierai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/navierai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nectar",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nectar/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: neighborsbank",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/neighborsbank/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: neoris",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/neoris/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nerdy",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nerdy/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: network",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/network/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: networkguard",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/networkguard/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: neysanetwork",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/neysanetwork/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: noble",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/noble/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nomiso",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nomiso/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nothing",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nothing/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ntx",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ntx/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: nutrabolt",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/nutrabolt/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ogci",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ogci/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: omgcamontreal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/omgcamontreal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: omgcamontrealfr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/omgcamontrealfr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: omgcaphd",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/omgcaphd/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: omguk",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/omguk/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: omicron",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/omicron/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: openly",
+      "replacement": "Ashby: openly",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/openly",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: openweb",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/openweb/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: original",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/original/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ottoaviation",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ottoaviation/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: outschool",
+      "replacement": "Ashby: outschool",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/outschool",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: pactlabs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pactlabs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: paloit",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/paloit/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pangaea",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pangaea/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pantherlabs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pantherlabs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: papaya",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/papaya/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: paradigm",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/paradigm/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: parenthetic",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/parenthetic/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: particlehealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/particlehealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: partnerstack",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/partnerstack/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pathfinder",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pathfinder/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: paydo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/paydo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: paymenttools",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/paymenttools/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: paystack",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/paystack/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: perchenergycareers",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/perchenergycareers/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: philo",
+      "replacement": "Ashby: philo",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/philo",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: phonepe",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/phonepe/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: picpay",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/picpay/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pineparkhealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pineparkhealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pixiebrix",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pixiebrix/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pixocial",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pixocial/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pleo",
+      "replacement": "Ashby: pleo",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/pleo",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: plotly",
+      "replacement": "Ashby: plotly",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/plotly",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: pomelocare",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pomelocare/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: porschewalnutcreek",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/porschewalnutcreek/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: postman",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/postman/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: preacher",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/preacher/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: primerai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/primerai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: priv",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/priv/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: productschool",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/productschool/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: project44opportunities",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/project44opportunities/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: providencedig",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/providencedig/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: provider",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/provider/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pti",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pti/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: pursuecare",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/pursuecare/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: qcentrix",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/qcentrix/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: radiantsecurity",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/radiantsecurity/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: radicalnumerics",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/radicalnumerics/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: rampnetwork",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/rampnetwork/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: rdccareers",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/rdccareers/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: reach",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/reach/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ready",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ready/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: realpha",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/realpha/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: realtymogul",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/realtymogul/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: rebathcorporate",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/rebathcorporate/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: rebet",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/rebet/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: recharge",
+      "replacement": "Ashby: recharge",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/recharge",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: redpandadata",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/redpandadata/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ref",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ref/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: referralsonly",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/referralsonly/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: regscale",
+      "replacement": "Ashby: regscale",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/regscale",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: relyance",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/relyance/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: remotecom",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/remotecom/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: remotereferralboardinternaluseonly",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/remotereferralboardinternaluseonly/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: repeatmd",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/repeatmd/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: residenthome",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/residenthome/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: retraced",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/retraced/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: rockbot",
+      "replacement": "Ashby: rockbot",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/rockbot",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: root",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/root/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: runpod",
+      "replacement": "Ashby: runpod",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/runpod",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: rxvantage",
+      "replacement": "Ashby: rxvantage",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/rxvantage",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: sa",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sa/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: saasacademy",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/saasacademy/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sage",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sage/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: scoutai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/scoutai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: scsfinancial",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/scsfinancial/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: seamlessai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/seamlessai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: selkirksport",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/selkirksport/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sendle",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sendle/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: seniordoc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/seniordoc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: serviceexpress",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/serviceexpress/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: shaker",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/shaker/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: shelf",
+      "replacement": "Ashby: shelf",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/shelf",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: shift4",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/shift4/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: shipwell",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/shipwell/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sievo",
+      "replacement": "Ashby: sievo",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/sievo",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: silverlake",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/silverlake/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: silvr",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/silvr/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: simplifyjobsintegrationsandbox",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/simplifyjobsintegrationsandbox/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: simply",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/simply/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: singularity6",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/singularity6/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sixt",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sixt/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sixthstreet",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sixthstreet/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: skinlaundry",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/skinlaundry/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: skupos",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/skupos/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: skyscanner",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/skyscanner/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: slingshotaerospace",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/slingshotaerospace/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: smartpay",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/smartpay/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: smartwarehousing",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/smartwarehousing/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: smemaryland",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/smemaryland/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: smepennsylvania",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/smepennsylvania/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: snackpass",
+      "replacement": "Ashby: snackpass",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/snackpass",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: snackpasspt",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/snackpasspt/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: softexpert",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/softexpert/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sojern",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sojern/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: songtrust",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/songtrust/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sorcero",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sorcero/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: southworks",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/southworks/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sparrow",
+      "replacement": "Ashby: sparrow",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/sparrow",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: springhealth66",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/springhealth66/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: starcloud",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/starcloud/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: starmind",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/starmind/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: starwars",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/starwars/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: stensul",
+      "replacement": "Ashby: stensul",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/stensul",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: stepmobile",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/stepmobile/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: stitch",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/stitch/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: streamlinedefense",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/streamlinedefense/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: stridehealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/stridehealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: stripes",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/stripes/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: summit",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/summit/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sunriseaba",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sunriseaba/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: sunriselandscape",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/sunriselandscape/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: superbet",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/superbet/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: supernal",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/supernal/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: support",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/support/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: swanbitcoin",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/swanbitcoin/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: symbolica",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/symbolica/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: synaptic",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/synaptic/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: syncro",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/syncro/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: syp",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/syp/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: systems",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/systems/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tanso",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tanso/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: targetrwe",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/targetrwe/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tdw",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tdw/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: teach",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/teach/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tecnoempleo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tecnoempleo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tekion",
+      "replacement": "Ashby: tekion",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/tekion",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: telemedicine",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/telemedicine/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: temporal",
+      "replacement": "Ashby: temporal",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/temporal",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: temporaltechnologies",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/temporaltechnologies/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: testcompany",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/testcompany/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thedailybeast31",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thedailybeast31/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thedoulanetwork",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thedoulanetwork/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thephoenix",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thephoenix/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thinkingmachines",
+      "replacement": "Ashby: thinkingmachines",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/thinkingmachines",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: thinkmarkets",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thinkmarkets/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thirtymadison",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thirtymadison/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thousandeyes",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thousandeyes/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: threatlocker",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/threatlocker/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: threespacelab",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/threespacelab/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: thymecare",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/thymecare/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tlatechinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tlatechinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tomorrowhealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tomorrowhealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: toogoodtogo",
+      "replacement": "Ashby: toogoodtogo",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/toogoodtogo",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: topcompare",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/topcompare/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: transcarent",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/transcarent/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: trident",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/trident/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: trinityairmedical",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/trinityairmedical/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: trueclassicteesllc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/trueclassicteesllc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: truepill",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/truepill/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: truework",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/truework/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: trustedhealth",
+      "replacement": "Ashby: trustedhealth",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/trustedhealth",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: tutorme",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tutorme/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: tvscientificpoweredbypinterest",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/tvscientificpoweredbypinterest/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ultramobile",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/ultramobile/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: uncommongoods",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/uncommongoods/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: underdogfantasy",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/underdogfantasy/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: unity3d",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/unity3d/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: unlisted",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/unlisted/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: up",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/up/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: uplifter",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/uplifter/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: uplifterusa",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/uplifterusa/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: upside",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/upside/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vannahealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/vannahealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vastai",
+      "replacement": "Ashby: vastai",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/vastai",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: veedio",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/veedio/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: veriforce",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/veriforce/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: veza",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/veza/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: victory",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/victory/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: visia",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/visia/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: visiersolutionsinc",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/visiersolutionsinc/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vitablehealth",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/vitablehealth/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vivi",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/vivi/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vivian",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/vivian/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: vsi",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/vsi/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: wayve",
+      "replacement": "Ashby: wayve",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/wayve",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: welcomelend",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/welcomelend/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: whop",
+      "replacement": "Ashby: whop",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/whop",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: woodsideai",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/woodsideai/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: worldlabs",
+      "replacement": "Ashby: worldlabs",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/worldlabs",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: wyndlabs",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/wyndlabs/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: xhiring",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/xhiring/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: zenvia",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/zenvia/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: ziina",
+      "replacement": "Ashby: ziina",
+      "evidence": "https://api.ashbyhq.com/posting-api/job-board/ziina",
+      "reason": "Matching employer identity in public board metadata or job description; live jobs API verified."
+    },
+    {
+      "name": "Greenhouse: zind-erprogram",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/zind-erprogram/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: zora",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/zora/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Greenhouse: zylo",
+      "replacement": "",
+      "evidence": "https://boards-api.greenhouse.io/v1/boards/zylo/jobs",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Lever: autoroboto",
+      "replacement": "",
+      "evidence": "https://api.lever.co/v0/postings/autoroboto?mode=json",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Lever: calstart",
+      "replacement": "",
+      "evidence": "https://api.lever.co/v0/postings/calstart?mode=json",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    },
+    {
+      "name": "Lever: cirrus",
+      "replacement": "",
+      "evidence": "https://api.lever.co/v0/postings/cirrus?mode=json",
+      "reason": "HTTP 404 confirmed; no verified replacement found. Company may still be hiring elsewhere."
+    }
+  ]
+}

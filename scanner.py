@@ -11,6 +11,7 @@ from core import (Store, greenhouse, ashby, arbeitnow, weworkremotely, remoteok,
 from core import jobicy, arbeitnow_uk
 from extra_sources import lever, himalayas, remotive, usajobs
 from source_health import Health, refresh_directory
+from board_repairs import load_audit, apply_audit, repaired_directory
 
 DEFAULTS = dict(minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
                 lever_boards=[], usajobs_email='', mail_host='', mail_user='', mail_folder='LinkedIn Jobs')
@@ -31,13 +32,14 @@ class Scanner:
         if self.settings_path.exists():
             self.settings.update(json.loads(self.settings_path.read_text(encoding='utf-8')))
         self.seed_directory = load_board_directory(directory or Path(__file__).with_name('board-directory.json'))
-        self.directory = list(self.seed_directory)
+        self.audit = load_audit()
+        self.directory = repaired_directory(self.seed_directory,self.audit)
         db = Store(self.db_path)
         cursor = db.scan_cursor()
         db.db.close()
         self.state = dict(running=False, completed=0, total=0, errors=[], last_finished=None,
                           new_alerts=0, cursor=cursor, directory_size=len(self.directory),
-                          successful=0, skipped=0, unavailable=[], recovered=[], directory_notice='')
+                          successful=0, skipped=0, unavailable=[], recovered=[], repairs=[r for r in self.audit["boards"] if r["replacement"]], directory_notice='')
 
     def snapshot(self):
         with self.lock:
@@ -96,7 +98,9 @@ class Scanner:
         db = Store(self.db_path)
         try:
             health = Health(db.db)
+            apply_audit(health,self.audit)
             self.directory, notice, updated = refresh_directory(self.seed_directory,self.data_dir)
+            self.directory = repaired_directory(self.directory,self.audit)
             with self.lock:
                 self.state.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
             batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size'])
@@ -109,13 +113,15 @@ class Scanner:
                 tasks[name] = lambda f=fn, slug=b['slug']: f(slug)
             for key, prefix, fn in [('boards','Greenhouse: ',greenhouse),('ashby_boards','Ashby: ',ashby),('lever_boards','Lever: ',lever)]:
                 for slug in settings[key]: tasks[prefix+slug] = lambda f=fn,b=slug:f(b)
+            for repair in self.audit['boards']:
+                if repair['replacement']: tasks.pop(repair['name'],None)
             if mail: tasks['LinkedIn email'] = lambda:read_mail(mail)
             # Successfully resolved alternate addresses receive frequent checks.
             for row in health.report():
                 name = row['replacement']
                 if name:
                     provider,slug = name.split(': ',1)
-                    fn = ashby if provider=='Ashby' else greenhouse
+                    fn = {'Ashby':ashby,'Greenhouse':greenhouse,'Lever':lever}[provider]
                     tasks[name] = lambda f=fn,b=slug:f(b)
             due = {name:fn for name,fn in tasks.items() if health.due(name)}
             with self.lock: self.state['skipped'] = len(tasks)-len(due)
@@ -139,28 +145,6 @@ class Scanner:
                             with self.lock: self.state['errors'].append(error)
                     finally:
                         with self.lock: self.state['completed'] += 1
-            # Resolve platform migrations only to registry-listed alternate addresses,
-            # and only after the alternate provider answers successfully.
-            known = {(b['vendor'],b['slug']) for b in self.directory}
-            attempts = 0
-            for row in health.report():
-                if row['status']!='unavailable' or row['replacement'] or attempts>=5 or row['name'].startswith('Lever: '): continue
-                provider,slug = row['name'].split(': ',1)
-                vendor = 'ashby' if provider=='Greenhouse' else 'greenhouse'
-                alternate = ('Ashby: ' if vendor=='ashby' else 'Greenhouse: ')+slug
-                if (vendor,slug) not in known or not health.due(alternate): continue
-                attempts += 1
-                try:
-                    jobs = (ashby if vendor=='ashby' else greenhouse)(slug)
-                    new = db.ingest(alternate,jobs)
-                    health.record(alternate,'ok',0)
-                    with db.db:
-                        db.db.execute('UPDATE source_health SET replacement=? WHERE name=?',(alternate,row['name']))
-                    with self.lock:
-                        self.state['recovered'].append(row['name']+' → '+alternate)
-                        self.state['new_alerts'] += len(new)
-                except Exception as exc:
-                    health.failure(alternate,exc,board=True)
             db.save_scan_cursor(cursor)
             with self.lock:
                 self.state.update(cursor=cursor,last_finished=datetime.now(timezone.utc).isoformat(),

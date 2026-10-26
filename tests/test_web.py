@@ -13,6 +13,7 @@ class WebTests(unittest.TestCase):
         self.client.get('/')
         with self.client.session_transaction() as s: self.csrf = s['csrf']
         self.scanner = self.app.extensions['scanner']
+        self.scanner.audit = dict(version=1,boards=[])
     def tearDown(self): self.temp.cleanup()
     def post(self,path,data):
         return self.client.post(path,data=dict(data,csrf=self.csrf))
@@ -126,7 +127,7 @@ class WebTests(unittest.TestCase):
     @patch('scanner.arbeitnow_uk',return_value=[])
     @patch('scanner.arbeitnow',return_value=[])
     @patch('scanner.weworkremotely',return_value=[])
-    def test_missing_board_is_skipped_and_alternate_recorded(self,*mocks):
+    def test_missing_board_does_not_guess_alternate_employer(self,*mocks):
         from urllib.error import HTTPError
         from source_health import Health
         directory=[dict(vendor='greenhouse',slug='moved'),dict(vendor='ashby',slug='moved')]
@@ -140,7 +141,7 @@ class WebTests(unittest.TestCase):
             self.assertEqual(gone.call_count,1)
             self.assertGreater(self.scanner.snapshot()['skipped'],0)
         db=Store(self.scanner.db_path)
-        self.assertEqual(Health(db.db).get('Greenhouse: moved')['replacement'],'Ashby: moved')
+        self.assertEqual(Health(db.db).get('Greenhouse: moved')['replacement'],'')
         db.db.close()
 
 if __name__=='__main__': unittest.main()

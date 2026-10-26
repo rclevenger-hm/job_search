@@ -20,6 +20,7 @@ if (list) {
       document.getElementById('scan-status').textContent = `${s.running ? 'Scanning' : (s.enabled ? 'Waiting for next round' : 'Scanner disabled')} · ${data.available} under 24 hours (${data.ready} US remote) · ${s.new_alerts} new alerts · ${s.successful} successful sources · ${s.skipped} skipped or not due · Directory ${s.cursor} / ${s.directory_size} · ${s.errors.length} connection failures`;
       document.getElementById('exclusions').textContent = `Fresh alert feed excludes: ${data.excluded.outside_window} outside the 24-hour window or missing dates; ${data.excluded.applied} applied; ${data.excluded.dismissed} dismissed. No dates are changed to fill the board.`;
       document.getElementById('directory-notice').textContent = s.directory_notice || (s.directory_updated ? `Directory checked ${new Date(s.directory_updated*1000).toLocaleString()}. Jobicy is checked hourly.` : 'Directory refresh pending.');
+      document.getElementById('unavailable-summary').textContent = `Unavailable endpoints — ${s.unavailable.length} temporarily skipped`;
       const unavailable = document.getElementById('unavailable'); unavailable.replaceChildren();
       s.unavailable.forEach(board => {const item = document.createElement('li'); item.textContent = `${board.name}: unavailable; retry ${new Date(board.retry_at*1000).toLocaleDateString()}${board.replacement ? ' — alternate: '+board.replacement : ''}`; unavailable.appendChild(item);});
       const errors = document.getElementById('errors'); errors.replaceChildren();

@@ -21,5 +21,6 @@
 </nav>
 <p id="exclusions" class="muted"></p><p id="directory-notice" class="muted"></p>
 <details><summary>Connection failures (automatic backoff)</summary><ul id="errors">{% for error in state.errors %}<li>{{ error }}</li>{% endfor %}</ul></details>
-<details><summary>Unavailable boards — temporarily skipped</summary><p>Missing boards are held for seven days. Known alternate platform addresses are checked before being used. The directory is refreshed daily; not every renamed board can be recovered automatically.</p><ul id="unavailable"></ul></details>
+<details><summary id="unavailable-summary">Unavailable endpoints — temporarily skipped</summary><p>Confirmed missing endpoints are skipped for 30 days, then checked again. This does not mean the company has stopped hiring. Only reviewed employer mappings are used for replacements.</p><ul id="unavailable"></ul></details>
+<details><summary>Verified endpoint updates ({{ state.repairs|length }})</summary><p>Old endpoints are replaced in scanning, including priority lists. A matching board name alone is not sufficient evidence.</p><ul>{% for repair in state.repairs %}<li>{{ repair.name }} → {{ repair.replacement }} · <a href="{{ repair.evidence }}" target="_blank" rel="noopener noreferrer">Verification source</a></li>{% endfor %}</ul></details>
 {% endblock %}
