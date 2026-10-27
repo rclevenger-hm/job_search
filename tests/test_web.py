@@ -14,6 +14,7 @@ class WebTests(unittest.TestCase):
         with self.client.session_transaction() as s: self.csrf = s['csrf']
         self.scanner = self.app.extensions['scanner']
         self.scanner.audit = dict(version=1,boards=[])
+        self.scanner.settings['curated'] = []
     def tearDown(self): self.temp.cleanup()
     def post(self,path,data):
         return self.client.post(path,data=dict(data,csrf=self.csrf))

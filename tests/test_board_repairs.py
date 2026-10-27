@@ -21,6 +21,7 @@ class BoardRepairTests(unittest.TestCase):
         from scanner import Scanner
         with tempfile.TemporaryDirectory() as tmp:
             scanner=Scanner(tmp)
+            scanner.settings["curated"]=[]
             scanner.audit=dict(version=1,boards=[dict(name='Greenhouse: old',replacement='Ashby: fixed',reason='verified')])
             scanner.settings.update(boards=['old'],ashby_boards=[],lever_boards=[],wwr=False)
             with patch('scanner.refresh_directory',return_value=([dict(vendor='greenhouse',slug='old')],'',1)), \

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content %}
+<h1>Company watchlist</h1>
+<p>Selected employers are checked hourly, independently of the rotating directory. Only matching SRE, DevOps and Platform Engineer roles with US-eligible remote signals are imported.</p>
+<p>Careers pages can include email applications. Undated jobs appear in Browse all jobs; alerts still require a verified posting timestamp under 24 hours. First checks establish a quiet baseline.</p>
+<form method="post" class="panel"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+{% for company in companies %}<article class="job"><div>
+<label class="check"><input type="checkbox" name="company" value="{{ company.id }}" {% if company.id in selected %}checked{% endif %}>{{ company.name }}</label>
+<a href="{{ company.url }}" target="_blank" rel="noopener noreferrer">Official careers page</a> · {{ 'Careers-page monitor' if company.kind == 'page' else 'Public employer jobs API' }}
+{% set check = checks.get(company.id) %}
+{% if check %}<p>{{ check.matches }} matching roles at last check · {{ check.status }} · <time>{{ check.checked }}</time></p>{% if check.error %}<p>{{ check.error }}</p>{% endif %}
+{% else %}<p>Not checked yet.</p>{% endif %}
+{% if company.id == 'verrus' %}<small>Optional example. The reviewed SRE role is office-based and will not be imported.</small>{% endif %}
+</div></article>{% endfor %}
+<button>Save watchlist</button></form>
+<p>Disabling a company stops these priority checks; it may still appear in broad search. Changing a selection does not delete saved jobs or applications. Direct-page checks inspect up to 20 matching links per employer. Pages that require JavaScript execution or change format may need a connector update.</p>
+<a href="/?scope=browse">Browse all saved matches</a>
+{% endblock %}

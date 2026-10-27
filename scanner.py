@@ -11,9 +11,11 @@ from core import (Store, greenhouse, ashby, arbeitnow, weworkremotely, remoteok,
 from core import jobicy, arbeitnow_uk
 from extra_sources import lever, himalayas, remotive, usajobs
 from source_health import Health, refresh_directory
+from curated import COMPANIES, monitor
+import time
 from board_repairs import load_audit, apply_audit, repaired_directory
 
-DEFAULTS = dict(minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
+DEFAULTS = dict(curated=[c['id'] for c in COMPANIES if c['default']], minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
                 lever_boards=[], usajobs_email='', mail_host='', mail_user='', mail_folder='LinkedIn Jobs')
 
 class Scanner:
@@ -123,6 +125,12 @@ class Scanner:
                     provider,slug = name.split(': ',1)
                     fn = {'Ashby':ashby,'Greenhouse':greenhouse,'Lever':lever}[provider]
                     tasks[name] = lambda f=fn,b=slug:f(b)
+            curated_tasks = {}
+            for company in COMPANIES:
+                if company['id'] not in settings.get('curated',[]): continue
+                name = ('Greenhouse: ' if company['kind']=='api' else 'Careers: ') + company['id']
+                curated_tasks[name] = company['id']
+                tasks[name] = lambda c=company: monitor(c)
             due = {name:fn for name,fn in tasks.items() if health.due(name)}
             with self.lock: self.state['skipped'] = len(tasks)-len(due)
             tasks = due
@@ -132,14 +140,23 @@ class Scanner:
                 for future in as_completed(futures):
                     name = futures[future]
                     try:
-                        new = db.ingest(name, future.result())
-                        health.record(name,'ok',{'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
+                        rows = future.result()
+                        new = db.ingest(name, rows)
+                        if name in curated_tasks:
+                            with db.db:
+                                db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
+                                    (curated_tasks[name],time.time(),'ok',len(rows),''))
+                        health.record(name,'ok',3600 if name in curated_tasks else {'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
                         with self.lock:
                             self.state['new_alerts'] += len(new)
                             self.state['successful'] += 1
                     except Exception as exc:
                         code = getattr(exc, 'code', None)
                         error = f'{name}: {type(exc).__name__}' + (f' ({code})' if code else '')
+                        if name in curated_tasks:
+                            with db.db:
+                                db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
+                                    (curated_tasks[name],time.time(),'error',0,error))
                         status = health.failure(name,exc,board=name.startswith(('Ashby: ','Greenhouse: ','Lever: ')))
                         if status!='unavailable':
                             with self.lock: self.state['errors'].append(error)

@@ -270,6 +270,7 @@ class Store:
             key TEXT PRIMARY KEY, title TEXT, company TEXT, location TEXT, url TEXT,
             source TEXT, eligibility TEXT, posted TEXT, discovered TEXT, status TEXT DEFAULT 'New')''')
         self.db.execute('CREATE TABLE IF NOT EXISTS job_metadata (key TEXT PRIMARY KEY, source_date TEXT, expires REAL)')
+        self.db.execute('CREATE TABLE IF NOT EXISTS curated_checks (company TEXT PRIMARY KEY, checked REAL, status TEXT, matches INTEGER, error TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS sources (name TEXT PRIMARY KEY)')
         self.db.execute('CREATE TABLE IF NOT EXISTS scan_state (name TEXT PRIMARY KEY, cursor INTEGER NOT NULL)')
         self.db.execute('''CREATE TABLE IF NOT EXISTS applications (

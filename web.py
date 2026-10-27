@@ -7,6 +7,7 @@ from pathlib import Path
 from flask import Flask, render_template, request, redirect, url_for, session, abort, jsonify, flash
 from core import Store, posted_age, posted_within_24_hours, parse_email
 from scanner import Scanner
+from curated import COMPANIES
 
 def create_app(data_dir=None, start_scanner=False):
     app = Flask(__name__)
@@ -76,6 +77,22 @@ def create_app(data_dir=None, start_scanner=False):
                        total=visible['total'], page=visible['page'], pages=visible['pages'],
                        ready=sum(j['eligibility']=='Ready' for j in jobs),
                        jobs=[{k:j[k] for k in ('key','title','company','status','eligibility','age')} for j in jobs])
+
+    @app.route('/monitor',methods=['GET','POST'])
+    def curated_monitor():
+        with scanner.lock: settings = dict(scanner.settings)
+        if request.method == 'POST':
+            selected = request.form.getlist('company')
+            if any(value not in {c['id'] for c in COMPANIES} for value in selected): abort(400)
+            settings['curated'] = list(dict.fromkeys(selected))
+            scanner.save_settings(settings)
+            flash('Watchlist saved. Enabled companies are checked hourly while the scanner runs.')
+            scanner.trigger()
+            return redirect(url_for('curated_monitor'))
+        with store() as db:
+            checks = {r[0]:dict(checked=datetime.fromtimestamp(r[1]).astimezone().isoformat(),status=r[2],matches=r[3],error=r[4])
+                for r in db.db.execute('SELECT company,checked,status,matches,error FROM curated_checks')}
+        return render_template('monitor.html',companies=COMPANIES,selected=settings.get('curated',[]),checks=checks)
 
     @app.get('/healthz')
     def health():
