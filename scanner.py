@@ -13,10 +13,11 @@ from extra_sources import lever, himalayas, remotive, usajobs
 from source_health import Health, refresh_directory
 from request_limits import DeferredRequest
 from curated import COMPANIES, monitor
+from major_employers import EMPLOYERS, fetch as fetch_major, ConnectorUnavailable
 import time
 from board_repairs import load_audit, apply_audit, repaired_directory
 
-DEFAULTS = dict(curated=[c['id'] for c in COMPANIES if c['default']], minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
+DEFAULTS = dict(major_employers=[c['id'] for c in EMPLOYERS if c['id']!='meta'], curated=[c['id'] for c in COMPANIES if c['default']], minutes=5, boards=[], ashby_boards=[], wwr=True, batch_size=150,
                 lever_boards=[], usajobs_email='', mail_host='', mail_user='', mail_folder='LinkedIn Jobs')
 
 class Scanner:
@@ -151,6 +152,10 @@ class Scanner:
                     progress.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
             batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size']) if lane != 'feeds' else ([],db.scan_cursor())
             tasks = {'Arbeitnow':arbeitnow, 'Arbeitnow UK':arbeitnow_uk, 'Remote OK':remoteok, 'Jobicy':jobicy, 'Himalayas':himalayas, 'Remotive':remotive}
+            if lane == 'feeds':
+                for company in settings.get('major_employers',[]):
+                    if company in {c['id'] for c in EMPLOYERS}:
+                        tasks['Major: '+company] = lambda c=company:fetch_major(c)
             federal_stats = {}
             if federal_key and federal_email: tasks['USAJOBS'] = lambda:usajobs(federal_email,federal_key,federal_stats)
             if settings['wwr']: tasks['We Work Remotely'] = weworkremotely
@@ -183,6 +188,12 @@ class Scanner:
             with self.lock: progress['skipped'] = len(tasks)-len(due)
             tasks = due
             with self.lock: progress['total'] = len(tasks)
+            for name in tasks:
+                if name.startswith('Major: '):
+                    saved=db.db.execute('SELECT data FROM source_diagnostics WHERE name=?',(name,)).fetchone()
+                    report=json.loads(saved[0]) if saved else {}
+                    report.update(status='scanning',last_attempt=datetime.now(timezone.utc).isoformat())
+                    with db.db: db.db.execute('INSERT OR REPLACE INTO source_diagnostics VALUES (?,?)',(name,json.dumps(report)))
             with ThreadPoolExecutor(max_workers=4 if lane == 'feeds' else 12) as pool:
                 futures = {pool.submit(fn):name for name,fn in tasks.items()}
                 for future in as_completed(futures):
@@ -190,6 +201,10 @@ class Scanner:
                     try:
                         rows = future.result()
                         new = db.ingest(name, rows)
+                        if name.startswith('Major: '):
+                            report=dict(rows.report, status='partial' if rows.report['partial'] else 'ok',
+                                        last_attempt=datetime.now(timezone.utc).isoformat(), last_success=datetime.now(timezone.utc).isoformat())
+                            with db.db: db.db.execute('INSERT OR REPLACE INTO source_diagnostics VALUES (?,?)',(name,json.dumps(report)))
                         if name == 'USAJOBS':
                             self.record_federal(db, dict(status='ok', error='', last_attempt=datetime.now(timezone.utc).isoformat(),
                                 last_success=datetime.now(timezone.utc).isoformat(), counts=federal_stats))
@@ -197,7 +212,7 @@ class Scanner:
                             with db.db:
                                 db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
                                     (curated_tasks[name],time.time(),'ok',len(rows),''))
-                        health.record(name,'ok',3600 if name in curated_tasks else {'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,300))
+                        health.record(name,'ok',max(3600,getattr(rows,'report',{}).get('retry_seconds',0)) if name in curated_tasks or name.startswith('Major: ') else {'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,300))
                         with self.lock:
                             progress['new_alerts'] += len(new)
                             progress['successful'] += 1
@@ -207,6 +222,12 @@ class Scanner:
                     except Exception as exc:
                         code = getattr(exc, 'code', None)
                         error = f'{name}: {type(exc).__name__}' + (f' ({code})' if code else '')
+                        if name.startswith('Major: '):
+                            saved=db.db.execute('SELECT data FROM source_diagnostics WHERE name=?',(name,)).fetchone()
+                            report=json.loads(saved[0]) if saved else {}
+                            report.update(status='unsupported' if isinstance(exc,ConnectorUnavailable) else 'error',
+                                last_attempt=datetime.now(timezone.utc).isoformat(),note=str(exc) if isinstance(exc,ConnectorUnavailable) else error)
+                            with db.db: db.db.execute('INSERT OR REPLACE INTO source_diagnostics VALUES (?,?)',(name,json.dumps(report)))
                         if name == 'USAJOBS':
                             message = ('Authentication rejected; check the registered email and API key.' if code in (401,403)
                                 else 'Rate limited; retry will follow the source cooldown.' if code == 429 else error)

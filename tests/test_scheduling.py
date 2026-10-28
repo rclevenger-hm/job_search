@@ -20,7 +20,7 @@ class SchedulingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder, ExitStack() as stack:
             scanner=Scanner(folder)
             scanner.audit=dict(version=1,boards=[])
-            scanner.settings.update(curated=[],batch_size=1)
+            scanner.settings.update(curated=[],major_employers=[],batch_size=1)
             scanner.seed_directory=[dict(vendor='greenhouse',slug='one'),dict(vendor='greenhouse',slug='two')]
             scanner.directory=scanner.seed_directory
             stack.enter_context(patch('scanner.refresh_directory',return_value=(scanner.seed_directory,'',None)))

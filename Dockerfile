@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && groupadd --gid 10001 jobradar \
     && useradd --uid 10001 --gid 10001 --create-home jobradar \
     && mkdir /data && chown jobradar:jobradar /data
-COPY request_limits.py resumes.py curated.py board_repairs.py board-audit.json extra_sources.py core.py scanner.py source_health.py web.py board-directory.json ./
+COPY major_employers.py request_limits.py resumes.py curated.py board_repairs.py board-audit.json extra_sources.py core.py scanner.py source_health.py web.py board-directory.json ./
 COPY templates ./templates
 COPY static ./static
 USER jobradar

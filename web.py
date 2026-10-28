@@ -1,13 +1,15 @@
+import json
 import os
 import re
 import secrets
 from contextlib import contextmanager
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from flask import Flask, render_template, request, redirect, url_for, session, abort, jsonify, flash
 from core import Store, posted_age, posted_within_24_hours, parse_email
 from scanner import Scanner
 from curated import COMPANIES
+from major_employers import EMPLOYERS, employer_id
 
 def create_app(data_dir=None, start_scanner=False):
     app = Flask(__name__)
@@ -79,6 +81,54 @@ def create_app(data_dir=None, start_scanner=False):
                        total=visible['total'], page=visible['page'], pages=visible['pages'],
                        ready=sum(j['eligibility']=='Ready' for j in jobs),
                        jobs=[{k:j[k] for k in ('key','title','company','status','eligibility','age')} for j in jobs])
+
+    @app.route('/major-employers', methods=['GET','POST'])
+    def major_employers():
+        if request.method == 'POST':
+            selected=request.form.getlist('employer')
+            if any(c not in {e['id'] for e in EMPLOYERS if e['id']!='meta'} for c in selected): abort(400)
+            with scanner.lock: settings=dict(scanner.settings)
+            settings['major_employers']=list(dict.fromkeys(selected))
+            scanner.save_settings(settings)
+            scanner.trigger()
+            flash('Employer connectors saved. Checks run hourly with backoff; existing matches are retained.')
+            return redirect(url_for('major_employers'))
+        company=request.args.get('company','')
+        keyword=request.args.get('role','').strip()[:100]
+        age=request.args.get('age','all')
+        if age not in ('all','1','7','30','90','unknown'): age='all'
+        with store() as db:
+            rows=db.rows()
+            checks={r[0][7:]:json.loads(r[1]) for r in db.db.execute("SELECT name,data FROM source_diagnostics WHERE name LIKE 'Major: %'")}
+        jobs=[]
+        for job in available(rows,'browse'):
+            if job['eligibility']!='Ready': continue
+            identity=employer_id(job)
+            if not identity or (company and identity!=company): continue
+            if keyword and keyword.casefold() not in job['title'].casefold(): continue
+            published=job['posted']
+            if not published and job['source'].startswith('Direct employer: '):
+                match=re.search(r'Published: (\d{4}-\d{2}-\d{2})',job['source_date'])
+                if match: published=match[1]
+            try: day=datetime.fromisoformat(published.replace('Z','+00:00')).date()
+            except (ValueError,TypeError): day=None
+            days=(datetime.now(timezone.utc).date()-day).days if day else None
+            if age=='unknown' and day is not None: continue
+            if age.isdigit() and (days is None or not 0<=days<=int(age)): continue
+            job['published_label']=published or 'Unknown'
+            job['sort_date']=day.isoformat() if day else ''
+            jobs.append(job)
+        jobs.sort(key=lambda j:(j['sort_date'],j['key']),reverse=True)
+        # Collapse duplicate links within an employer and title.
+        unique={}
+        for job in jobs:
+            key=(employer_id(job),job['title'].strip().casefold(),job['url'])
+            unique.setdefault(key,job)
+        jobs=list(unique.values());total=len(jobs);pages=max(1,(total+49)//50)
+        page=min(pages,max(1,request.args.get('page',1,type=int) or 1))
+        with scanner.lock: selected=list(scanner.settings.get('major_employers',[]))
+        return render_template('major_employers.html',employers=EMPLOYERS,checks=checks,selected=selected,
+            jobs=jobs[(page-1)*50:page*50],total=total,page=page,pages=pages,company=company,role=keyword,age=age)
 
     @app.route('/monitor',methods=['GET','POST'])
     def curated_monitor():

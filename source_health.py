@@ -46,6 +46,7 @@ class Health:
                     try: delay = max(delay,parsedate_to_datetime(value).timestamp()-(now or time.time()))
                     except (ValueError,TypeError): pass
         delay=max(delay, {'Jobicy':3600,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
+        if name.startswith('Major: '): delay=max(delay,3600)
         self.record(name,status,delay,f'{type(exc).__name__}'+(f' ({code})' if code else ''),now=now)
         return status
 
