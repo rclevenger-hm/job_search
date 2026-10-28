@@ -15,6 +15,7 @@ from email import policy
 from html.parser import HTMLParser
 from urllib.parse import urlparse, quote
 from pathlib import Path
+from request_limits import LIMITS
 
 ROLE = re.compile(
     r"site[ -]reliability|\bsre\b|dev[ -]?(?:sec[ -]?)?ops|"
@@ -84,8 +85,9 @@ def linkedin_url(url):
 
 def fetch_json(url):
     request = urllib.request.Request(url, headers={'User-Agent': 'JobRadar/1.0 personal job alerts', 'Accept': 'application/json'})
-    with urllib.request.urlopen(request, timeout=20) as response:
-        return json.load(response)
+    with LIMITS.request(url):
+        with urllib.request.urlopen(request, timeout=20) as response:
+            return json.load(response)
 
 def greenhouse(board):
     data = fetch_json('https://boards-api.greenhouse.io/v1/boards/' + quote(board, safe='') + '/jobs')

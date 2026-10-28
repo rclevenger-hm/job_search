@@ -11,6 +11,7 @@ from core import (Store, greenhouse, ashby, arbeitnow, weworkremotely, remoteok,
 from core import jobicy, arbeitnow_uk
 from extra_sources import lever, himalayas, remotive, usajobs
 from source_health import Health, refresh_directory
+from request_limits import DeferredRequest
 from curated import COMPANIES, monitor
 import time
 from board_repairs import load_audit, apply_audit, repaired_directory
@@ -26,6 +27,8 @@ class Scanner:
         self.settings_path = self.data_dir/'settings.json'
         self.lock = threading.RLock()
         self.wake = threading.Event()
+        self.feed_wake = threading.Event()
+        self.feed_thread = None
         self.stop = threading.Event()
         self.thread = None
         self.force_federal = False
@@ -49,9 +52,14 @@ class Scanner:
                           new_alerts=0, cursor=cursor, directory_size=len(self.directory),
                           successful=0, skipped=0, unavailable=[], recovered=[], repairs=[r for r in self.audit["boards"] if r["replacement"]], directory_notice='')
 
+        self.feed_state = dict(running=False, completed=0, total=0, errors=[], last_finished=None,
+                               new_alerts=0, successful=0, skipped=0)
+
     def snapshot(self):
         with self.lock:
-            return {**self.state, 'errors':list(self.state['errors']), 'email_connected':bool(self.mail),
+            return {**self.state, 'errors':list(self.state['errors']) + list(self.feed_state['errors']),
+                    'feeds':dict(self.feed_state), 'scan_mode':'continuous',
+                    'new_alerts':self.state['new_alerts']+self.feed_state['new_alerts'], 'email_connected':bool(self.mail),
                     'usajobs_diagnostics':dict(self.federal_diagnostics),
                     'usajobs_configured':bool(self.usajobs_key and (self.settings.get('usajobs_email') or os.environ.get('USAJOBS_EMAIL'))),
                     'enabled': bool(self.thread and self.thread.is_alive())}
@@ -82,7 +90,7 @@ class Scanner:
     def request_usajobs_check(self):
         with self.lock:
             self.force_federal = True
-        self.wake.set()
+        self.feed_wake.set()
 
     def record_federal(self, db, values):
         with self.lock:
@@ -93,46 +101,55 @@ class Scanner:
 
     def start(self):
         if self.thread: return
-        self.thread = threading.Thread(target=self.loop, name='jobradar-scanner', daemon=True)
+        self.thread = threading.Thread(target=self.loop, args=('directory',), name='jobradar-directory', daemon=True)
+        self.feed_thread = threading.Thread(target=self.loop, args=('feeds',), name='jobradar-feeds', daemon=True)
         self.thread.start()
+        self.feed_thread.start()
 
     def trigger(self):
-        if self.snapshot()['running']: return False
         self.wake.set()
+        self.feed_wake.set()
         return True
 
-    def loop(self):
+    def loop(self, lane='directory'):
+        wake = self.feed_wake if lane == 'feeds' else self.wake
+        progress = self.feed_state if lane == 'feeds' else self.state
         while not self.stop.is_set():
-            self.wake.clear()
+            wake.clear()
+            failed = False
             try:
-                self.run_once()
+                self.run_once(lane)
             except Exception as exc:
+                failed = True
                 logging.error('Scan failed: %s',type(exc).__name__)
                 with self.lock:
-                    self.state.update(running=False, errors=[f'Scan failed: {type(exc).__name__}'])
+                    progress.update(running=False, errors=[f'Scan failed: {type(exc).__name__}'])
             with self.lock:
-                seconds = max(5, int(self.settings['minutes'])) * 60
-            self.wake.wait(seconds)
+                seconds = max(5, int(self.settings['minutes'])) * 60 if lane == 'feeds' else 5
+            wake.wait(60 if failed else seconds)
 
-    def run_once(self):
+    def run_once(self, lane='all'):
+        progress = self.feed_state if lane == 'feeds' else self.state
+        started = time.monotonic()
         with self.lock:
             settings = dict(self.settings)
             mail = self.mail
             federal_key = self.usajobs_key
             federal_email = settings.get("usajobs_email") or os.environ.get("USAJOBS_EMAIL", "")
-            if self.state['running']: return
-            force_federal = self.force_federal
-            self.force_federal = False
-            self.state.update(running=True, completed=0, errors=[], new_alerts=0, successful=0, skipped=0, recovered=[])
+            if progress['running']: return
+            force_federal = self.force_federal if lane != 'directory' else False
+            if lane != 'directory': self.force_federal = False
+            progress.update(running=True, completed=0, errors=[], new_alerts=0, successful=0, skipped=0, recovered=[])
         db = Store(self.db_path)
         try:
             health = Health(db.db)
-            apply_audit(health,self.audit)
-            self.directory, notice, updated = refresh_directory(self.seed_directory,self.data_dir)
-            self.directory = repaired_directory(self.directory,self.audit)
-            with self.lock:
-                self.state.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
-            batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size'])
+            if lane != 'feeds':
+                apply_audit(health,self.audit)
+                self.directory, notice, updated = refresh_directory(self.seed_directory,self.data_dir)
+                self.directory = repaired_directory(self.directory,self.audit)
+                with self.lock:
+                    progress.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
+            batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size']) if lane != 'feeds' else ([],db.scan_cursor())
             tasks = {'Arbeitnow':arbeitnow, 'Arbeitnow UK':arbeitnow_uk, 'Remote OK':remoteok, 'Jobicy':jobicy, 'Himalayas':himalayas, 'Remotive':remotive}
             federal_stats = {}
             if federal_key and federal_email: tasks['USAJOBS'] = lambda:usajobs(federal_email,federal_key,federal_stats)
@@ -159,11 +176,14 @@ class Scanner:
                 name = ('Greenhouse: ' if company['kind']=='api' else 'Careers: ') + company['id']
                 curated_tasks[name] = company['id']
                 tasks[name] = lambda c=company: monitor(c)
+            def is_board(name): return name.startswith(('Ashby: ','Greenhouse: ','Lever: ')) and name not in curated_tasks
+            if lane == 'directory': tasks = {name:fn for name,fn in tasks.items() if is_board(name)}
+            if lane == 'feeds': tasks = {name:fn for name,fn in tasks.items() if not is_board(name)}
             due = {name:fn for name,fn in tasks.items() if health.due(name) or (name == 'USAJOBS' and force_federal)}
-            with self.lock: self.state['skipped'] = len(tasks)-len(due)
+            with self.lock: progress['skipped'] = len(tasks)-len(due)
             tasks = due
-            with self.lock: self.state['total'] = len(tasks)
-            with ThreadPoolExecutor(max_workers=5) as pool:
+            with self.lock: progress['total'] = len(tasks)
+            with ThreadPoolExecutor(max_workers=4 if lane == 'feeds' else 12) as pool:
                 futures = {pool.submit(fn):name for name,fn in tasks.items()}
                 for future in as_completed(futures):
                     name = futures[future]
@@ -177,10 +197,13 @@ class Scanner:
                             with db.db:
                                 db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
                                     (curated_tasks[name],time.time(),'ok',len(rows),''))
-                        health.record(name,'ok',3600 if name in curated_tasks else {'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,0))
+                        health.record(name,'ok',3600 if name in curated_tasks else {'Jobicy':3600,'Arbeitnow UK':900,'Himalayas':86400,'Remotive':21600,'USAJOBS':3600}.get(name,300))
                         with self.lock:
-                            self.state['new_alerts'] += len(new)
-                            self.state['successful'] += 1
+                            progress['new_alerts'] += len(new)
+                            progress['successful'] += 1
+                    except DeferredRequest as exc:
+                        health.record(name,'cooldown',exc.seconds)
+                        with self.lock: progress['skipped'] += 1
                     except Exception as exc:
                         code = getattr(exc, 'code', None)
                         error = f'{name}: {type(exc).__name__}' + (f' ({code})' if code else '')
@@ -194,13 +217,16 @@ class Scanner:
                                     (curated_tasks[name],time.time(),'error',0,error))
                         status = health.failure(name,exc,board=name.startswith(('Ashby: ','Greenhouse: ','Lever: ')))
                         if status!='unavailable':
-                            with self.lock: self.state['errors'].append(error)
+                            with self.lock: progress['errors'].append(error)
                     finally:
-                        with self.lock: self.state['completed'] += 1
-            db.save_scan_cursor(cursor)
+                        with self.lock: progress['completed'] += 1
+            if lane != 'feeds': db.save_scan_cursor(cursor)
             with self.lock:
-                self.state.update(cursor=cursor,last_finished=datetime.now(timezone.utc).isoformat(),
-                    unavailable=[r for r in health.report() if r['status']=='unavailable'])
+                progress.update(last_finished=datetime.now(timezone.utc).isoformat())
+                if lane != 'feeds':
+                    progress.update(cursor=cursor, unavailable=[r for r in health.report() if r['status']=='unavailable'])
         finally:
             db.db.close()
-            with self.lock: self.state['running'] = False
+            with self.lock:
+                progress['running'] = False
+                progress['duration_seconds'] = round(time.monotonic()-started,1)
