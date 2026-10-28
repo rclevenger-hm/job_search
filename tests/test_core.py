@@ -132,9 +132,11 @@ class Tests(unittest.TestCase):
         self.assertEqual(eligibility('USA', False), 'Excluded')
 
     def test_roles(self):
-        for title in ['Senior Site Reliability Engineer', 'Staff SRE', 'DevOps Engineer', 'Platform Engineer II']:
+        for title in ['Senior Site Reliability Engineer', 'Staff SRE', 'DevOps Engineer', 'Platform Engineer II', 'Forward Deployed Engineer',
+                      'Senior Forward-Deployed Engineer', 'Forward Deployed Software Engineer']:
             self.assertTrue(ROLE.search(title))
         self.assertFalse(ROLE.search('Account Executive'))
+        self.assertFalse(ROLE.search('Forward Deployed Sales Consultant'))
 
     def test_link_boundary(self):
         self.assertIsNone(linkedin_url('https://linkedin.com.evil.test/jobs/view/123'))

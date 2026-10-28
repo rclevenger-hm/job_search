@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlencode, quote
 from core import ROLE, US, eligibility, fetch_json, posted_within_24_hours
 
-QUERIES = ('site reliability', 'devops', 'platform engineer')
+QUERIES = ('site reliability', 'devops', 'platform engineer', 'forward deployed')
 
 def row(key, title, company, location, url, source, posted='', source_date='', expires=0):
     return dict(key=key, title=title, company=company, location=location, url=url,

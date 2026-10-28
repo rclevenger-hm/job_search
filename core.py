@@ -16,7 +16,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse, quote
 from pathlib import Path
 
-ROLE = re.compile(r"site[ -]reliability|\bsre\b|dev[ -]?ops|platform\s+(?:software\s+)?engineer|engineer[^\n]{0,35}\bplatform\b", re.I)
+ROLE = re.compile(r"site[ -]reliability|\bsre\b|dev[ -]?ops|platform\s+(?:software\s+)?engineer|engineer[^\n]{0,35}\bplatform\b|\bforward[\s-]+deployed[\s-]+(?:software[\s-]+)?engineer\b", re.I)
 US = re.compile(r"\b(?:usa|us|u\.s\.|united states|north america|americas|worldwide|anywhere|global)\b", re.I)
 REMOTE = re.compile(r"\bremote\b|work from home|worldwide|anywhere", re.I)
 NOT_REMOTE = re.compile(r"hybrid|on[ -]?site|not remote|no remote", re.I)

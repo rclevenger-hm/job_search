@@ -1,6 +1,6 @@
 # JobRadar
 
-A personal job-search dashboard for US remote Site Reliability Engineer, DevOps and Platform Engineer roles posted less than 24 hours ago. Runs in Docker with a browser interface, a background scanner and persistent application history.
+A personal job-search dashboard for US remote Site Reliability Engineer, DevOps, Platform Engineer and Forward Deployed Engineer roles posted less than 24 hours ago. Runs in Docker with a browser interface, a background scanner and persistent application history.
 
 ## Run
 
