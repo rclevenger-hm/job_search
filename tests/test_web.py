@@ -93,14 +93,32 @@ class WebTests(unittest.TestCase):
         self.assertIsNotNone(self.scanner.mail)
         self.assertIsNone(create_app(self.temp.name).extensions['scanner'].mail)
 
-    def test_usajobs_secret_is_memory_only(self):
+    def test_federal_diagnostics_survive_restart_without_secrets(self):
+        db=Store(self.scanner.db_path)
+        self.scanner.record_federal(db,dict(status='ok',last_success='2026-10-28T00:00:00Z',counts=dict(
+            fetched=3,matches=1,title_rejected=2,closed=0,fresh=0,older=0,unknown_date=1,truncated=False)))
+        self.scanner.record_federal(db,dict(status='error',error='Authentication rejected',last_attempt='2026-10-28T01:00:00Z'))
+        db.db.close()
+        restarted=create_app(self.temp.name)
+        diagnostic=restarted.extensions['scanner'].snapshot()['usajobs_diagnostics']
+        self.assertEqual(diagnostic['counts']['matches'],1)
+        self.assertEqual(diagnostic['status'],'error')
+        response=restarted.test_client().get('/settings')
+        self.assertEqual(response.status_code,200)
+        self.assertIn('Authentication rejected',response.get_data(as_text=True))
+
+    def test_usajobs_secret_persists_privately(self):
         payload = dict(minutes='5',batch_size='150',boards='',ashby_boards='',lever_boards='',
             usajobs_email='user@example.com',usajobs_key='private-federal-key')
         self.assertEqual(self.post('/settings',payload).status_code,302)
         self.assertTrue(self.scanner.snapshot()['usajobs_configured'])
         self.assertNotIn('private-federal-key',self.scanner.settings_path.read_text())
         self.assertNotIn('private-federal-key',self.client.get('/settings').get_data(as_text=True))
+        self.assertEqual(self.client.get('/settings').status_code,200)
+        self.assertTrue(create_app(self.temp.name).extensions['scanner'].snapshot()['usajobs_configured'])
+        self.assertNotIn('private-federal-key',self.client.get('/api/status').get_data(as_text=True))
         self.post('/settings',dict(payload,usajobs_key='',disconnect_usajobs='on'))
+        self.assertFalse(create_app(self.temp.name).extensions['scanner'].snapshot()['usajobs_configured'])
         self.assertFalse(self.scanner.snapshot()['usajobs_configured'])
 
     @patch('scanner.himalayas',return_value=[])

@@ -159,10 +159,23 @@ def create_app(data_dir=None, start_scanner=False):
                 if password and not all(updated[k] for k in ('mail_host','mail_user','mail_folder')):
                     raise ValueError('Enter the mail host, username and folder.')
                 scanner.save_settings(updated,password,'disconnect' in request.form,request.form.get('usajobs_key',''),'disconnect_usajobs' in request.form)
-                flash('Saved. Mail passwords stay in memory only; reconnect after a container restart.')
+                if request.form.get('usajobs_key') or updated['usajobs_email'] != current.get('usajobs_email'):
+                    scanner.request_usajobs_check()
+                flash('Saved. USAJOBS keys persist across restarts. Mail passwords stay in memory only; reconnect after a container restart.')
                 return redirect(url_for('settings'))
             except ValueError as exc: flash(str(exc))
         return render_template('settings.html',settings=current,state=scanner.snapshot())
+
+    @app.post('/check-usajobs')
+    def check_usajobs():
+        if not scanner.snapshot()['usajobs_configured']:
+            flash('Save your registered USAJOBS email and API key first.')
+        elif not scanner.snapshot()['enabled']:
+            flash('Scanner is disabled by the server configuration.')
+        else:
+            scanner.request_usajobs_check()
+            flash('USAJOBS check queued. Refresh Settings after the scan completes to see the result.')
+        return redirect(url_for('settings'))
 
     @app.post('/import-email')
     def import_email():

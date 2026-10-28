@@ -55,12 +55,33 @@ class ExtraSourceTests(unittest.TestCase):
             MatchedObjectDescriptor=dict(PositionTitle='Platform Engineer',PositionURI='https://www.usajobs.gov/job/1',
                 PublicationStartDate='2026-10-25',OrganizationName='Agency',PositionLocationDisplay='Anywhere in the U.S.'))]))).encode()
         fetch.return_value.__enter__.return_value=response
-        jobs=usajobs('test@example.com','private-key')
+        stats={}
+        jobs=usajobs('test@example.com','private-key',stats)
         self.assertEqual(len(jobs),1)
         self.assertEqual(jobs[0]['posted'],'')
+        self.assertEqual(jobs[0]['expires'],0)
+        self.assertEqual(stats['fetched'],1)
+        self.assertEqual(stats['unknown_date'],1)
         req=fetch.call_args.args[0]
         self.assertIn('RemoteIndicator=True',req.full_url)
         self.assertEqual(req.get_header('Authorization-key'),'private-key')
+
+    @patch('extra_sources.urllib.request.urlopen')
+    def test_federal_deadlines_and_diagnostics(self, fetch):
+        from datetime import datetime, timezone, timedelta
+        now=datetime.now(timezone.utc)
+        def item(key, title='DevOps Engineer', closing=None):
+            return dict(MatchedObjectId=key,MatchedObjectDescriptor=dict(PositionTitle=title,
+                PositionURI='https://www.usajobs.gov/job/'+str(key),PublicationStartDate=now.isoformat(),
+                ApplicationCloseDate=closing or (now+timedelta(days=30)).isoformat()))
+        response=MagicMock()
+        response.read.return_value=json.dumps(dict(SearchResult=dict(SearchResultItems=[
+            item(1),item(2,'Accountant'),item(3,closing=(now-timedelta(days=1)).isoformat())]))).encode()
+        fetch.return_value.__enter__.return_value=response
+        stats={}; jobs=usajobs('test@example.com','key',stats)
+        self.assertEqual(len(jobs),1)
+        self.assertGreater(jobs[0]['expires'],time.time()+86400)
+        self.assertEqual((stats['fetched'],stats['title_rejected'],stats['closed'],stats['fresh']),(3,1,1,1))
 
     def test_feed_failure_minimum_intervals(self):
         db=Store(':memory:'); health=Health(db.db)

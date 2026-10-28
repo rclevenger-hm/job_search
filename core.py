@@ -279,6 +279,10 @@ class Store:
         # Preserve old applied flags without inventing historical application dates.
         self.db.execute('''INSERT OR IGNORE INTO applications
             SELECT key, title, company, url, '', 'Applied', '' FROM jobs WHERE status='Applied' ''')
+        self.db.execute('CREATE TABLE IF NOT EXISTS source_diagnostics (name TEXT PRIMARY KEY, data TEXT NOT NULL)')
+        if not self.db.execute("SELECT 1 FROM scan_state WHERE name='usajobs_deadline_v1'").fetchone():
+            self.db.execute("UPDATE job_metadata SET expires=0 WHERE key IN (SELECT key FROM jobs WHERE source='USAJOBS')")
+            self.db.execute("INSERT INTO scan_state VALUES ('usajobs_deadline_v1',1)")
         self.db.commit()
 
     def ingest(self, source, jobs):

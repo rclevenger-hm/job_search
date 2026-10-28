@@ -4,7 +4,7 @@ import time
 import urllib.request
 from datetime import datetime, timezone
 from urllib.parse import urlencode, quote
-from core import ROLE, US, eligibility, fetch_json
+from core import ROLE, US, eligibility, fetch_json, posted_within_24_hours
 
 QUERIES = ('site reliability', 'devops', 'platform engineer')
 
@@ -68,8 +68,11 @@ def himalayas():
             if len(jobs)<20: break
     return list(results.values())
 
-def usajobs(email, api_key):
+def usajobs(email, api_key, diagnostics=None):
     results = {}
+    seen = set()
+    stats = diagnostics if diagnostics is not None else {}
+    stats.update(fetched=0, title_rejected=0, closed=0, unknown_date=0, fresh=0, older=0, matches=0, truncated=False)
     for query in QUERIES:
         for page in range(1,6):
             url = 'https://data.usajobs.gov/api/Search?' + urlencode(dict(
@@ -79,8 +82,23 @@ def usajobs(email, api_key):
             with urllib.request.urlopen(request,timeout=20) as response: data=json.load(response)
             items=data['SearchResult']['SearchResultItems']
             for item in items:
+                identity=str(item['MatchedObjectId'])
+                if identity in seen: continue
+                seen.add(identity)
+                stats['fetched'] += 1
                 j=item['MatchedObjectDescriptor']
-                if not ROLE.search(j.get('PositionTitle','')): continue
+                if not ROLE.search(j.get('PositionTitle','')):
+                    stats['title_rejected'] += 1
+                    continue
+                closing=j.get('ApplicationCloseDate') or j.get('PositionEndDate') or ''
+                expires=0
+                try:
+                    deadline=datetime.fromisoformat(closing.replace('Z','+00:00'))
+                    if deadline.tzinfo: expires=deadline.timestamp()
+                except (ValueError, TypeError): pass
+                if expires and expires <= time.time():
+                    stats['closed'] += 1
+                    continue
                 stamp=j.get('PublicationStartDate','')
                 # A date or timestamp without timezone cannot prove freshness.
                 try:
@@ -90,6 +108,9 @@ def usajobs(email, api_key):
                 key='usajobs:'+str(item['MatchedObjectId'])
                 results[key]=row(key,j['PositionTitle'],j.get('OrganizationName',''),
                     'US Remote; '+j.get('PositionLocationDisplay',''),j['PositionURI'],'USAJOBS',
-                    posted=posted,source_date='Publication date: '+stamp,expires=time.time()+3600)
+                    posted=posted,source_date='Publication date: '+stamp+('; Applications close: '+closing if closing else ''),expires=expires)
+                stats['unknown_date' if not posted else 'fresh' if posted_within_24_hours(posted) else 'older'] += 1
+            if page == 5 and len(items) == 100: stats['truncated'] = True
             if len(items)<100: break
+    stats['matches'] = len(results)
     return list(results.values())

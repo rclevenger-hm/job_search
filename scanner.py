@@ -28,7 +28,11 @@ class Scanner:
         self.wake = threading.Event()
         self.stop = threading.Event()
         self.thread = None
+        self.force_federal = False
+        self.credential_path = self.data_dir/'usajobs-credential.json'
         self.usajobs_key = os.environ.get("USAJOBS_API_KEY", "")
+        if self.credential_path.exists():
+            self.usajobs_key = json.loads(self.credential_path.read_text(encoding='utf-8')).get('key','')
         self.mail = None
         self.settings = dict(DEFAULTS)
         if self.settings_path.exists():
@@ -38,6 +42,8 @@ class Scanner:
         self.directory = repaired_directory(self.seed_directory,self.audit)
         db = Store(self.db_path)
         cursor = db.scan_cursor()
+        saved = db.db.execute("SELECT data FROM source_diagnostics WHERE name='USAJOBS'").fetchone()
+        self.federal_diagnostics = json.loads(saved[0]) if saved else {}
         db.db.close()
         self.state = dict(running=False, completed=0, total=0, errors=[], last_finished=None,
                           new_alerts=0, cursor=cursor, directory_size=len(self.directory),
@@ -46,13 +52,20 @@ class Scanner:
     def snapshot(self):
         with self.lock:
             return {**self.state, 'errors':list(self.state['errors']), 'email_connected':bool(self.mail),
+                    'usajobs_diagnostics':dict(self.federal_diagnostics),
                     'usajobs_configured':bool(self.usajobs_key and (self.settings.get('usajobs_email') or os.environ.get('USAJOBS_EMAIL'))),
                     'enabled': bool(self.thread and self.thread.is_alive())}
 
     def save_settings(self, settings, password='', disconnect=False, usajobs_key='', disconnect_usajobs=False):
         with self.lock:
             if disconnect_usajobs: self.usajobs_key = ""
-            elif usajobs_key: self.usajobs_key = usajobs_key
+            elif usajobs_key: self.usajobs_key = usajobs_key.strip()
+            if disconnect_usajobs or usajobs_key:
+                temp = self.credential_path.with_suffix('.tmp')
+                fd = os.open(temp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+                with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+                    json.dump({'key':self.usajobs_key}, stream)
+                temp.replace(self.credential_path)
             previous = self.settings
             self.settings = dict(settings)
             # Atomic replacement avoids a partially written settings file.
@@ -65,6 +78,18 @@ class Scanner:
                 self.mail = (settings['mail_host'],settings['mail_user'],password,settings['mail_folder'])
             elif any(previous.get(k) != settings.get(k) for k in ('mail_host','mail_user','mail_folder')):
                 self.mail = None
+
+    def request_usajobs_check(self):
+        with self.lock:
+            self.force_federal = True
+        self.wake.set()
+
+    def record_federal(self, db, values):
+        with self.lock:
+            self.federal_diagnostics.update(values)
+            with db.db:
+                db.db.execute('INSERT OR REPLACE INTO source_diagnostics VALUES (?,?)',
+                    ('USAJOBS',json.dumps(self.federal_diagnostics)))
 
     def start(self):
         if self.thread: return
@@ -96,6 +121,8 @@ class Scanner:
             federal_key = self.usajobs_key
             federal_email = settings.get("usajobs_email") or os.environ.get("USAJOBS_EMAIL", "")
             if self.state['running']: return
+            force_federal = self.force_federal
+            self.force_federal = False
             self.state.update(running=True, completed=0, errors=[], new_alerts=0, successful=0, skipped=0, recovered=[])
         db = Store(self.db_path)
         try:
@@ -107,7 +134,8 @@ class Scanner:
                 self.state.update(directory_notice=notice,directory_updated=updated,directory_size=len(self.directory))
             batch, cursor = directory_batch(self.directory, db.scan_cursor(), settings['batch_size'])
             tasks = {'Arbeitnow':arbeitnow, 'Arbeitnow UK':arbeitnow_uk, 'Remote OK':remoteok, 'Jobicy':jobicy, 'Himalayas':himalayas, 'Remotive':remotive}
-            if federal_key and federal_email: tasks['USAJOBS'] = lambda:usajobs(federal_email,federal_key)
+            federal_stats = {}
+            if federal_key and federal_email: tasks['USAJOBS'] = lambda:usajobs(federal_email,federal_key,federal_stats)
             if settings['wwr']: tasks['We Work Remotely'] = weworkremotely
             for b in batch:
                 fn = {'ashby':ashby,'greenhouse':greenhouse,'lever':lever}[b['vendor']]
@@ -131,7 +159,7 @@ class Scanner:
                 name = ('Greenhouse: ' if company['kind']=='api' else 'Careers: ') + company['id']
                 curated_tasks[name] = company['id']
                 tasks[name] = lambda c=company: monitor(c)
-            due = {name:fn for name,fn in tasks.items() if health.due(name)}
+            due = {name:fn for name,fn in tasks.items() if health.due(name) or (name == 'USAJOBS' and force_federal)}
             with self.lock: self.state['skipped'] = len(tasks)-len(due)
             tasks = due
             with self.lock: self.state['total'] = len(tasks)
@@ -142,6 +170,9 @@ class Scanner:
                     try:
                         rows = future.result()
                         new = db.ingest(name, rows)
+                        if name == 'USAJOBS':
+                            self.record_federal(db, dict(status='ok', error='', last_attempt=datetime.now(timezone.utc).isoformat(),
+                                last_success=datetime.now(timezone.utc).isoformat(), counts=federal_stats))
                         if name in curated_tasks:
                             with db.db:
                                 db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
@@ -153,6 +184,10 @@ class Scanner:
                     except Exception as exc:
                         code = getattr(exc, 'code', None)
                         error = f'{name}: {type(exc).__name__}' + (f' ({code})' if code else '')
+                        if name == 'USAJOBS':
+                            message = ('Authentication rejected; check the registered email and API key.' if code in (401,403)
+                                else 'Rate limited; retry will follow the source cooldown.' if code == 429 else error)
+                            self.record_federal(db, dict(status='error', error=message, last_attempt=datetime.now(timezone.utc).isoformat()))
                         if name in curated_tasks:
                             with db.db:
                                 db.db.execute('INSERT OR REPLACE INTO curated_checks VALUES (?,?,?,?,?)',
