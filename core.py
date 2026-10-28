@@ -16,7 +16,17 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse, quote
 from pathlib import Path
 
-ROLE = re.compile(r"site[ -]reliability|\bsre\b|dev[ -]?ops|platform\s+(?:software\s+)?engineer|engineer[^\n]{0,35}\bplatform\b|\bforward[\s-]+deployed[\s-]+(?:software[\s-]+)?engineer\b", re.I)
+ROLE = re.compile(
+    r"site[ -]reliability|\bsre\b|dev[ -]?(?:sec[ -]?)?ops|"
+    r"platform\s+(?:software\s+)?engineer|engineer[^\n]{0,35}\bplatform\b|"
+    r"\bforward[\s-]+deployed[\s-]+(?:(?:software|infrastructure)[\s-]+)?engineer\b|"
+    r"\b(?:cloud[\s-]+)?infrastructure[\s-]+engineer\b|"
+    r"\bcloud[\s-]+(?:platform[\s-]+)?engineer\b|"
+    r"\bproduction[\s-]+(?:reliability[\s-]+)?engineer\b|"
+    r"\bdeveloper[\s-]+(?:productivity|experience)[\s-]+engineer\b|"
+    r"\b(?:build(?:[\s-]+(?:and|&)[\s-]+release)?|release|ci\s*[/ -]\s*cd)[\s-]+engineer\b|"
+    r"\bengineer\b[^\n]{0,35}\b(?:cloud infrastructure|infrastructure|developer productivity|developer experience|ci/cd)\b",
+    re.I)
 US = re.compile(r"\b(?:usa|us|u\.s\.|united states|north america|americas|worldwide|anywhere|global)\b", re.I)
 REMOTE = re.compile(r"\bremote\b|work from home|worldwide|anywhere", re.I)
 NOT_REMOTE = re.compile(r"hybrid|on[ -]?site|not remote|no remote", re.I)

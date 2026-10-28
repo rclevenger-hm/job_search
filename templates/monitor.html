@@ -1,6 +1,6 @@
 {% extends 'base.html' %}{% block content %}
 <h1>Company watchlist</h1>
-<p>Selected employers are checked hourly, independently of the rotating directory. Only matching SRE, DevOps, Platform Engineer and Forward Deployed Engineer roles with US-eligible remote signals are imported.</p>
+<p>Selected employers are checked hourly, independently of the rotating directory. Only matching SRE, DevOps, DevSecOps, Platform, Infrastructure, Cloud, Production Reliability, Developer Productivity/Experience, Build/Release, CI/CD, and Forward Deployed Engineer roles with US-eligible remote signals are imported.</p>
 <p>Careers pages can include email applications. Undated jobs appear in Browse all jobs; alerts still require a verified posting timestamp under 24 hours. First checks establish a quiet baseline.</p>
 <form method="post" class="panel"><input type="hidden" name="csrf" value="{{ session.csrf }}">
 {% for company in companies %}<article class="job"><div>

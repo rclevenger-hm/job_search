@@ -133,10 +133,19 @@ class Tests(unittest.TestCase):
 
     def test_roles(self):
         for title in ['Senior Site Reliability Engineer', 'Staff SRE', 'DevOps Engineer', 'Platform Engineer II', 'Forward Deployed Engineer',
-                      'Senior Forward-Deployed Engineer', 'Forward Deployed Software Engineer']:
+                      'Senior Forward-Deployed Engineer', 'Forward Deployed Software Engineer',
+                      'Forward Deployed Infrastructure Engineer', 'Cloud Infrastructure Engineer',
+                      'Senior Infrastructure Engineer', 'Cloud Engineer', 'Cloud Platform Engineer',
+                      'Production Engineer', 'Production Reliability Engineer',
+                      'Developer Productivity Engineer', 'Developer Experience Engineer',
+                      'Build and Release Engineer', 'Build & Release Engineer', 'Release Engineer',
+                      'CI/CD Engineer', 'CI-CD Engineer', 'DevSecOps Engineer', 'Dev Sec Ops Engineer',
+                      'Software Engineer, Infrastructure', 'Engineer - Developer Productivity']:
             self.assertTrue(ROLE.search(title))
         self.assertFalse(ROLE.search('Account Executive'))
         self.assertFalse(ROLE.search('Forward Deployed Sales Consultant'))
+        for title in ['Cloud Account Manager', 'Developer Advocate', 'Production Operator', 'Release Coordinator']:
+            self.assertFalse(ROLE.search(title),title)
 
     def test_link_boundary(self):
         self.assertIsNone(linkedin_url('https://linkedin.com.evil.test/jobs/view/123'))

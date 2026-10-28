@@ -155,7 +155,7 @@ def register_resumes(app, scanner):
     @bp.get('/resumes/<int:identifier>/refine')
     def refine(identifier):
         record=get_resume(identifier)
-        prompt=('Review and improve my resume for remote US Site Reliability Engineer, DevOps, Platform Engineer, and Forward Deployed Engineer roles. '
+        prompt=('Review and improve my resume for remote US SRE, DevOps, DevSecOps, Platform, Infrastructure, Cloud, Production Reliability, Developer Productivity/Experience, Build/Release, CI/CD, and Forward Deployed Engineer roles. '
                 'Suggest specific edits, stronger bullet points, missing evidence, and ATS improvements. '
                 'Preserve all facts. Do not invent employers, dates, achievements, metrics, education, or skills. '
                 'Ask me for missing information. Return suggestions followed by a revised resume. '
@@ -169,7 +169,7 @@ def register_resumes(app, scanner):
                            (request.args.get('key',''),)).fetchone()
         if not row: abort(404)
         job=dict(zip(('title','company','location','url','source','posted'),row))
-        prompt=('Review this job for a US-based candidate seeking fully remote SRE, DevOps, Platform Engineer, or Forward Deployed Engineer work. '
+        prompt=('Review this job for a US-based candidate seeking fully remote SRE, DevOps, DevSecOps, Platform, Infrastructure, Cloud, Production Reliability, Developer Productivity/Experience, Build/Release, CI/CD, and Forward Deployed Engineer work. '
                 'Open the original posting if browsing is available; otherwise ask me to paste the full description. '
                 'Check whether it is still open, US remote eligibility, requirements, compensation, on-call expectations, '
                 'and application steps. Explain uncertainties and suggest questions for the recruiter. '
