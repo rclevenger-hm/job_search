@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<div class="heading"><div><h1>Saved resumes</h1><p>Create tailored drafts, save changes, and download a Word document or PDF.</p></div><a class="button" href="{{ url_for('resumes.edit') }}">Create resume</a></div>
+{% for resume in resumes %}<article class="job"><div><h2>{{ resume.title }}</h2><p>Saved {{ resume.updated }}</p></div><div class="actions">
+<a class="button" href="{{ url_for('resumes.edit',identifier=resume.id) }}">Edit</a>
+<a class="button secondary" href="{{ url_for('resumes.download',identifier=resume.id,kind='docx') }}">DOCX</a>
+<a class="button secondary" href="{{ url_for('resumes.download',identifier=resume.id,kind='pdf') }}">PDF</a>
+<a class="button secondary" href="{{ url_for('resumes.refine',identifier=resume.id) }}">Refine in Codex / ChatGPT</a>
+<form method="post" action="{{ url_for('resumes.delete',identifier=resume.id) }}" data-confirm-delete><input type="hidden" name="csrf" value="{{ session.csrf }}"><button class="secondary">Delete</button></form>
+</div></article>{% else %}<div class="empty"><h2>No saved resumes yet</h2><p>Create your first draft using your own experience and achievements.</p></div>{% endfor %}
+{% endblock %}

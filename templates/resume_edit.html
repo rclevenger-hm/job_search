@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block content %}
+<h1>{{ 'Edit resume' if record.id else 'Create resume' }}</h1><p>Use your own facts. Start achievement bullets with “- ”. Save before downloading or exporting for refinement.</p>
+<form method="post" class="panel" id="resume-editor"><input type="hidden" name="csrf" value="{{ session.csrf }}">
+<label>Draft name<input name="title" maxlength="150" required value="{{ record.title }}" placeholder="Platform Engineer resume"></label>
+{% for key,label in fields %}<label>{{ label }}{% if key in ['name','headline','contact'] %}<input name="{{ key }}" maxlength="20000" value="{{ record.data.get(key,'') }}">{% else %}<textarea name="{{ key }}" maxlength="20000" rows="{{ 9 if key=='experience' else 4 }}">{{ record.data.get(key,'') }}</textarea>{% endif %}</label>{% endfor %}
+<button>Save resume</button><span id="save-status" role="status"></span></form>
+{% if record.id %}<div class="actions"><a class="button" href="{{ url_for('resumes.download',identifier=record.id,kind='docx') }}">Download saved DOCX</a><a class="button" href="{{ url_for('resumes.download',identifier=record.id,kind='pdf') }}">Download saved PDF</a><a class="button secondary" href="{{ url_for('resumes.refine',identifier=record.id) }}">Refine saved resume in Codex / ChatGPT</a></div>{% endif %}
+<p><a href="{{ url_for('resumes.index') }}">All saved resumes</a></p>{% endblock %}

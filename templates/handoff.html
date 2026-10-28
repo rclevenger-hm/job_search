@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}
+<h1>{{ title }}</h1><p>Review or edit the prompt below. Copy it into Codex or ChatGPT for suggestions. ChatGPT opens in a new tab; paste the prompt there to send it. Nothing is sent automatically.</p>
+<label>Review prompt<textarea id="handoff-prompt" rows="23">{{ prompt }}</textarea></label>
+<div class="actions"><button id="copy-handoff">Copy for Codex / ChatGPT</button><button id="chatgpt-handoff">Copy &amp; open ChatGPT</button><button id="download-handoff" class="secondary">Download prompt (.txt)</button></div><p id="handoff-status" role="status"></p>
+{% endblock %}

@@ -1,4 +1,30 @@
 const notifyButton = document.getElementById('notifications');
+document.querySelectorAll('[data-confirm-delete]').forEach(form => form.addEventListener('submit', event => {
+  if (!confirm('Delete this saved resume? This cannot be undone.')) event.preventDefault();
+}));
+const editor = document.getElementById('resume-editor');
+if (editor) {
+  let dirty = false;
+  editor.addEventListener('input', () => { dirty = true; document.getElementById('save-status').textContent = ' Unsaved changes'; });
+  editor.addEventListener('submit', () => { dirty = false; });
+  window.addEventListener('beforeunload', event => { if (dirty) { event.preventDefault(); event.returnValue = ''; } });
+}
+const handoff = document.getElementById('handoff-prompt');
+if (handoff) {
+  async function copyPrompt() {
+    try { await navigator.clipboard.writeText(handoff.value); document.getElementById('handoff-status').textContent = 'Copied. Paste into Codex or ChatGPT.'; }
+    catch { handoff.focus(); handoff.select(); document.getElementById('handoff-status').textContent = 'Clipboard unavailable. The prompt is selected; press Ctrl+C (or Command+C) to copy.'; }
+  }
+  document.getElementById('copy-handoff').addEventListener('click', copyPrompt);
+  document.getElementById('chatgpt-handoff').addEventListener('click', () => {
+    window.open('https://chatgpt.com/', '_blank', 'noopener,noreferrer'); copyPrompt();
+  });
+  document.getElementById('download-handoff').addEventListener('click', () => {
+    const url = URL.createObjectURL(new Blob([handoff.value], {type:'text/plain;charset=utf-8'}));
+    const link = document.createElement('a'); link.href = url; link.download = 'review-prompt.txt'; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+}
 if (notifyButton) notifyButton.addEventListener('click', async () => {
   if (!('Notification' in window)) { notifyButton.textContent = 'Notifications unsupported'; return; }
   const permission = await Notification.requestPermission();

@@ -107,3 +107,9 @@ Enabled companies are checked hourly. Canonical and Automattic are read through 
 Direct page monitoring follows at most 20 matching job links per company and restricts requests and redirects to the reviewed company's HTTPS host. Embedded JSON is parsed without executing scripts. Removed detail pages (404/410) are skipped; other errors are displayed in the watchlist. Direct-page records expire from display unless refreshed within 24 hours, without deleting application history. Matching publication timestamps are preserved; missing or timezone-ambiguous dates stay browse-only. Application instructions distinguish email, online forms, or directions on the employer's page. No applications or email are sent automatically.
 
 The watchlist shows the last check, matching-role count and errors. Zero matches means no roles met the current title and US-remote filters, not that the employer has no openings. The curated catalog and source-specific extraction live in `curated.py`; additional employers require a reviewed connector entry rather than arbitrary URL crawling.
+
+## Resume workspace and AI handoff
+
+Open `/resumes` to create named resume drafts with contact details, summary, skills, experience, education, and projects. Drafts persist in the SQLite database on the Docker volume. Save before downloading DOCX/PDF or exporting for refinement. Saved drafts can be edited and deleted; deletion requires confirmation in the browser.
+
+Resume refinement and each job listing's Review in ChatGPT button open an editable prompt. Copy it into Codex, or use Copy & open ChatGPT and paste there. No account API integration or automatic submission is involved; personal content is never placed in a ChatGPT URL. A text download is also available. Job reviews include saved listing metadata and the original link, not a scraped full description.

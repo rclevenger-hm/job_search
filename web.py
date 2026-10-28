@@ -15,6 +15,8 @@ def create_app(data_dir=None, start_scanner=False):
                       SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict')
     scanner = Scanner(data_dir or os.environ.get('JOBRADAR_DATA_DIR','data'))
     app.extensions['scanner'] = scanner
+    from resumes import register_resumes
+    register_resumes(app, scanner)
 
     @contextmanager
     def store():
